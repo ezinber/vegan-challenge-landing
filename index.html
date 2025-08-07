@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <!-- <link rel="stylesheet" href="./src/fonts/fonts.css" defer/> -->
+  <link rel="stylesheet" href="./src/styles/style.css" defer/>
+  <link rel="preload" href="./src/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="./src/styles/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="description of the webpage" />
+  <meta property="og:locale" content="en" />
+  <!-- <meta property="og:url" content="https://futurefood.vgn.ge" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="vegan challenge" />
+  <meta property="og:title" content="vegan challenge" />
+  <meta property="og:description" content="vegan challenge" />
+  <!-- <meta property="og:image" content="https://futurefood.ezinber.com/og.webp" /> -->
+  <title>vegan challenge</title>
+</head>
+
+<body>
+  <ez-header data-active-class="nav-link_active" hidden>
+      <li>
+        <a href="#signup" class="nav-link hover-opacity">sign up</a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link hover-opacity">about</a>
+      </li>
+  </ez-header>
+
+  <main>
+      <section class="section section_name_hero overlay">
+        <h1 class="section__title">
+          MORE PLANTS. LESS MEAT. TAKE THE 30-DAY CHALLENGE!
+        </h1>
+        <p class="section__subtitle">Join the ProVeg Veggie Challenge and try eating more <span class="text-accent">plant-based</span> for 30 days. It’s <span class="text-accent">better</span> for your health, <span class="text-accent">better</span> for the planet and <span class="text-accent">better</span> for animals. Get a <span class="text-accent">healthy</span> start with your personal Challenge. We’ll help you along the way with <span class="text-accent">free</span> tips, recipes and support.</p>
+      </section>
+
+      <section id="signup" class="section section_name_form">
+        <form action="post" class="form">
+          <h2 class="section__title">sign up!</h2>
+        </form>
+      </section>
+  </main>
+  <!-- <footer class="section footer"></footer> -->
+
+  <template id="ez-header">
+    <link rel="stylesheet" type="text/css">
+    <nav>
+      <ul>
+        <slot>
+          <!-- <li> elements expected -->
+        </slot>
+      </ul>
+    </nav>
+    <button type="menu" aria-label="Menu">
+      <span></span>
+    </button>
+  </template>
+  <script async type="module" src="./src/scripts/index.js"></script>
+</body>
+
+</html>
