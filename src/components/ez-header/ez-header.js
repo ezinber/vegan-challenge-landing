@@ -26,12 +26,12 @@ class EzHeader extends HTMLElement {
    * Collects all anchor links inside the header and maps them to their target sections.
    */
   createLinksAntTargetsList() {
-    this.linksAndTargets = this.listElements.map(i => {
+    this.listElements.forEach(i => {
       const link = i.querySelector('a');
       const target = document.getElementById(link.getAttribute('href')?.slice(1));
 
       if (target) {
-        return { link, target };
+        this.linksAndTargets.push({ link, target });
       }
     });
   }
