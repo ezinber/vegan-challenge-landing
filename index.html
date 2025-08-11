@@ -80,25 +80,40 @@
         <h2 class="section__title">why try vegan?</h2>
         <ul class="section__list">
           <li>
-            <article class="card">
-              <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
-              <h3 class="card__title">for the animals</h3>
-              <p class="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam veniam, amet autem odio, excepturi totam dolores nulla facilis molestiae nisi molestias? Beatae minus vel illum iure ab eaque officia omnis?</p>
-            </article>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">for the animals</h3>
+                <p class="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam veniam, amet autem odio, excepturi totam dolores nulla facilis molestiae nisi molestias? Beatae minus vel illum iure ab eaque officia omnis?</p>
+              </article>
+              <div class="popup" slot="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
+              </div>
+            </ez-dialog>
           </li>
           <li>
-            <article class="card">
-              <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
-              <h3 class="card__title">for our planet</h3>
-              <p class="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam veniam, amet autem odio, excepturi totam dolores nulla facilis molestiae nisi molestias? Beatae minus vel illum iure ab eaque officia omnis?</p>
-            </article>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">for our planet</h3>
+                <p class="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam veniam, amet autem odio, excepturi totam dolores nulla facilis molestiae nisi molestias? Beatae minus vel illum iure ab eaque officia omnis?</p>
+              </article>
+              <div class="popup" slot="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
+              </div>
+            </ez-dialog>
           </li>
           <li>
-            <article class="card">
-              <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
-              <h3 class="card__title">for our health</h3>
-              <p class="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam veniam, amet autem odio, excepturi totam dolores nulla facilis molestiae nisi molestias? Beatae minus vel illum iure ab eaque officia omnis?</p>
-            </article>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">for our health</h3>
+                <p class="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam veniam, amet autem odio, excepturi totam dolores nulla facilis molestiae nisi molestias? Beatae minus vel illum iure ab eaque officia omnis?</p>
+              </article>
+              <div class="popup" slot="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
+              </div>
+            </ez-dialog>
           </li>
         </ul>
       </section>
@@ -163,6 +178,20 @@
       <span></span>
     </button>
   </template>
+
+  <template id="ez-dialog">
+    <link rel="stylesheet" type="text/css">
+    <button type="button">
+      <slot name="button"></slot>
+    </button>
+    <dialog>
+      <slot name="content"></slot>
+      <form method="dialog">
+        <button type="submit" class="hover-opacity"></button>
+      </form>
+    </dialog>
+  </template>
+
   <script async type="module" src="./src/scripts/index.js"></script>
 </body>
 

@@ -236,8 +236,8 @@ p
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgb(var(--color-b));
-    background-color: var(--color-text-a);
+    color: var(--_color-b);
+    background-color: var(--_color-a);
     border-radius: 0 0 1em 1em;
   }
 }
@@ -252,7 +252,7 @@ p
     position: absolute;
     inset: 0;
     top: calc(var(--_vertical-padding) + 10em);
-    background-color: rgb(var(--color-a));
+    background-color: var(--_color-a);
     clip-path: ellipse(var(--max-width-rem) 100% at bottom);
     z-index: -1;
   }
@@ -263,7 +263,7 @@ p
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 4em 2em;
-    color: rgb(var(--color-b));
+    color: var(--_color-b);
     position: relative;
 
     & > li {
@@ -273,8 +273,8 @@ p
 }
 
 .section_name_how {
-  background-color: rgb(var(--color-a));
-  color: rgb(var(--color-b));
+  background-color: var(--_color-a);
+  color: var(--_color-b);
 }
 
 .form {
@@ -333,11 +333,23 @@ p
 }
 
 .card {
+  --_shadow-color: rgba(var(--color-b, 255,255,255), .4);
+  --_shadow-offset: -.5em .5em .5em;
+  --_offset: 0;
+
   max-width: 25ch;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1lh;
+  transform: translateY(var(--_offset));
+  transition:
+    transform var(--transition-a),
+    text-shadow var(--transition-a);
+
+  &:hover {
+    --_offset: -.5em;
+  }
 }
 
 .card__image {
@@ -345,6 +357,7 @@ p
   aspect-ratio: 1;
   border-radius: 1em;
   background-color: currentColor;
+  box-shadow: var(--_shadow-offset) var(--_shadow-color);
 }
 
 .card__title {
@@ -430,6 +443,8 @@ p
 .content-block {
   --_item-max-width: 25rem;
   --_text-row-gap: 1lh;
+  --_shadow-color: rgba(var(--color-b, 255,255,255), .4);
+  --_shadow-offset: -.5em .5em .5em;
 
   width: 100%;
   display: flex;
@@ -457,6 +472,7 @@ p
   background-color: rgb(var(--color-b));
   object-fit: cover;
   border-radius: 1em;
+  box-shadow: var(--_shadow-offset) var(--_shadow-color);
   flex: 1 1 18rem;
 }
 
@@ -479,4 +495,15 @@ p
   border: 2px solid currentColor;
   border-radius: .5em;
   cursor: pointer;
+}
+
+.popup {
+  --_color-a: rgb(var(--color-a, 255, 255, 255));
+  --_color-b: rgb(var(--color-b, 0, 0, 0));
+
+  max-width: 80ch;
+  padding: 1em;
+  color: var(--_color-b);
+  background-color: var(--_color-a);
+  border-radius: 1em;
 }
