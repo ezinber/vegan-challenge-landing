@@ -28,7 +28,7 @@ class EzHeader extends HTMLElement {
   createLinksAntTargetsList() {
     this.listElements.forEach(i => {
       const link = i.querySelector('a');
-      const target = document.getElementById(link.getAttribute('href')?.slice(1));
+      const target = document.getElementById(link?.getAttribute('href')?.slice(1));
 
       if (target) {
         this.linksAndTargets.push({ link, target });
