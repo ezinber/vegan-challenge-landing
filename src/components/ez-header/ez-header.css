@@ -47,7 +47,10 @@ ul {
 }
 
 ::slotted(li) {
+  width: 100%;
   display: flex;
+  position: relative;
+  text-align: center;
 }
 
 button {
