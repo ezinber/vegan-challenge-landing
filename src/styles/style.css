@@ -437,8 +437,7 @@ p
   overflow: hidden;
   white-space: nowrap;
 
-  &::before,
-  &::after {
+  &::before {
     content: '';
     position: absolute;
     height: .2em;
@@ -451,21 +450,35 @@ p
   }
 
   &::before {
-    top: 0;
-    border-radius: 0 0 .2em .2em;
-    transform: translateY(-.25em);
-  }
-
-  &::after {
     bottom: 0;
     border-radius: .2em .2em 0 0;
     transform: translateY(.25em);
   }
 
   &.nav-link_active {
-    &::before,
-    &::after {
+    &::before {
       transform: translateY(0);
+    }
+  }
+}
+
+.nav-link_with-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+
+  &::after {
+    content: '▶';
+    font-size: .7em;
+    transition: transform var(--_transition);
+    transition-delay: .5s;
+  }
+
+  &:hover {
+    &::after {
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition-delay: 0s;
     }
   }
 }

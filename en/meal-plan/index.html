@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <!-- <link rel="stylesheet" href="./src/fonts/fonts.css" defer/> -->
+  <link rel="stylesheet" href="../../src/styles/style.css" defer/>
+  <!-- <link rel="preload" href="./src/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+  <!-- <link rel="preload" href="./src/styles/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+  <link rel="preload" as="image" href="../../src/images/hero.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="description of the webpage" />
+  <meta property="og:locale" content="en" />
+  <!-- <meta property="og:url" content="https://futurefood.vgn.ge" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="vegan challenge" />
+  <meta property="og:title" content="vegan challenge" />
+  <meta property="og:description" content="vegan challenge" />
+  <!-- <meta property="og:image" content="https://futurefood.ezinber.com/og.webp" /> -->
+  <title>meal plan</title>
+</head>
+
+<body>
+  <ez-header data-active-class="nav-link_active" hidden>
+      <li>
+        <a href="../index.html#signup" class="nav-link hover-opacity">sign up</a>
+      </li>
+      <li>
+        <a href="../index.html#why" class="nav-link hover-opacity">why</a>
+      </li>
+      <li>
+        <p class="nav-link nav-link_with-menu hover-opacity">how</p>
+        <ul class="nav-link_sub">
+          <li>
+            <a href="../index.html#how" class="nav-link hover-opacity">how</a>
+          </li>
+          <li>
+            <a href="../dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p class="nav-link nav-link_with-menu hover-opacity">results</p>
+        <ul class="nav-link_sub">
+          <li>
+            <a href="../index.html#results" class="nav-link hover-opacity">results</a>
+          </li>
+          <li>
+            <a href="../analitics/index.html" class="nav-link hover-opacity">analytics</a>
+          </li>
+        </ul>
+      </li>
+  </ez-header>
+
+  <main>
+    <section class="section section_name_hero">
+      <h1 class="section__title">
+        meal plan
+      </h1>
+    </section>
+  </main>
+
+  <footer class="section footer"></footer>
+
+  <template id="ez-header">
+    <link rel="stylesheet" type="text/css">
+    <nav>
+      <ul>
+        <slot>
+          <!-- <li> elements expected -->
+        </slot>
+      </ul>
+    </nav>
+    <button type="menu" aria-label="Menu">
+      <span></span>
+    </button>
+  </template>
+
+  <template id="ez-dialog">
+    <link rel="stylesheet" type="text/css">
+    <button type="button">
+      <slot name="button"></slot>
+    </button>
+    <dialog>
+      <slot name="content"></slot>
+      <form method="dialog">
+        <button type="submit" class="hover-opacity"></button>
+      </form>
+    </dialog>
+  </template>
+
+  <script async type="module" src="../../src/scripts/index.js"></script>
+</body>
+
+</html>
