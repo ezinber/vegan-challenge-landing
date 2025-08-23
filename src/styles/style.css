@@ -471,14 +471,12 @@ p
 }
 
 .nav-link_sub {
-  --_inset: 1.5lh auto auto auto;
-
-  margin: 0 0 0 -.5em;
-  padding: .5em;
+  margin: 0;
+  padding: 1em;
   position: absolute;
 
-  inset: var(--_inset);
-  color: #fff;
+  inset: 1.5lh auto auto 50%;
+  transform: translateX(-50%);
   background-color: var(--_background-color, #000);
   list-style: none;
   visibility: hidden;
@@ -487,7 +485,8 @@ p
     opacity var(--_transition),
     visibility var(--_transition);
   transition-delay: .5s;
-  border-radius: .5em;
+  border-radius: 1em;
+  box-shadow: 2px 2px 4px black;
 
   .nav-link:hover + &,
   &:hover {
@@ -497,7 +496,8 @@ p
   }
 
   @media (width <= 640px) {
-    --_inset: auto 100% auto auto;
+    inset: auto 100% 50% auto;
+    transform: translateY(50%);
   }
 }
 

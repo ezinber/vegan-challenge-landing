@@ -1,6 +1,6 @@
 :host {
   --_transition: var(--transition-a, .2s linear);
-  --_background-color: var(--color-text-b, #000);
+  --_background-color: rgb(var(--color-b, #000));
   --_multiplier: var(--multiplier-1_25, 1);
   --_burger-line-width: 3px;
 
@@ -12,8 +12,9 @@
   position: fixed;
   top: 0;
   background-color: var(--_background-color);
-  border-radius: 1.5em;
+  border-radius: 1em;
   backdrop-filter: blur(8px);
+  box-shadow: 2px 2px 4px black;
   z-index: 3;
   opacity: 1;
   transition:
@@ -108,7 +109,7 @@ button {
 
     width: fit-content;
     height: fit-content;
-    padding: 1.5em 1.5em 3em;
+    padding: 1em 1em 3em;
   }
 
   ul {
