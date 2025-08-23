@@ -1,7 +1,41 @@
 // vite.config.js
-import { dirname, resolve } from 'path'
+import { dirname, resolve, extname, join } from 'path'
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import fs from 'fs';
+
+function stripIndexHtmlPlugin(outDir = 'dist') {
+  return {
+    name: 'strip-index-html',
+    closeBundle() {
+      const walk = (dir, cb) => {
+        for (const name of fs.readdirSync(dir)) {
+          const p = join(dir, name);
+          if (fs.statSync(p).isDirectory()) walk(p, cb);
+          else cb(p);
+        }
+      };
+
+      const htmlFiles = [];
+      walk(outDir, (p) => { if (p.endsWith('.html')) htmlFiles.push(p); });
+
+      const indexPattern = /(^|["'()>\s])\/?(([a-z0-9\-._~%!$&'()*+,;=:@\/]+)\/)index\.html(?=["'()>\s]|$)/ig;
+
+      for (const file of htmlFiles) {
+        let s = fs.readFileSync(file, 'utf8');
+        const replaced = s.replace(indexPattern, (m, prefix, pathPart) => {
+          // если pathPart пустой — это /index.html -> заменяем на '/'
+          const clean = pathPart ? `/${pathPart.replace(/\/$/,'')}` : '/';
+          return prefix + clean;
+        });
+        if (replaced !== s) {
+          fs.writeFileSync(file, replaced, 'utf8');
+          this.info(`strip-index-html: updated ${file}`);
+        }
+      }
+    }
+  };
+}
 
 export default defineConfig({
   build: {
@@ -31,5 +65,6 @@ export default defineConfig({
         useShortDoctype: true,
       },
     }),
+    stripIndexHtmlPlugin('dist'),
   ],
 });
