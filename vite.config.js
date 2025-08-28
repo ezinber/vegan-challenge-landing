@@ -4,38 +4,79 @@ import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import fs from 'fs';
 
+// function stripIndexHtmlPlugin(outDir = 'dist') {
+//   return {
+//     name: 'strip-index-html',
+//     closeBundle() {
+//       const walk = (dir, cb) => {
+//         for (const name of fs.readdirSync(dir)) {
+//           const p = join(dir, name);
+//           if (fs.statSync(p).isDirectory()) walk(p, cb);
+//           else cb(p);
+//         }
+//       };
+
+//       const htmlFiles = [];
+//       walk(outDir, (p) => { if (p.endsWith('.html')) htmlFiles.push(p); });
+
+//       const indexPattern = /(^|["'()>\s])\/?(([a-z0-9\-._~%!$&'()*+,;=:@\/]+)\/)index\.html(?=["'()>\s]|$)/ig;
+
+//       for (const file of htmlFiles) {
+//         let s = fs.readFileSync(file, 'utf8');
+//         const replaced = s.replace(indexPattern, (m, prefix, pathPart) => {
+//           // если pathPart пустой — это /index.html -> заменяем на '/'
+//           const clean = pathPart ? `/${pathPart.replace(/\/$/,'')}` : '/';
+//           return prefix + clean;
+//         });
+//         if (replaced !== s) {
+//           fs.writeFileSync(file, replaced, 'utf8');
+//           this.info(`strip-index-html: updated ${file}`);
+//         }
+//       }
+//     }
+//   };
+// }
+
 function stripIndexHtmlPlugin(outDir = 'dist') {
   return {
     name: 'strip-index-html',
     closeBundle() {
-      const walk = (dir, cb) => {
-        for (const name of fs.readdirSync(dir)) {
-          const p = join(dir, name);
-          if (fs.statSync(p).isDirectory()) walk(p, cb);
-          else cb(p);
-        }
+      // рекурсивный обход папки
+      const walk = (dir) => {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        return entries.flatMap(entry => {
+          const p = join(dir, entry.name);
+          return entry.isDirectory() ? walk(p) : p;
+        });
       };
 
-      const htmlFiles = [];
-      walk(outDir, (p) => { if (p.endsWith('.html')) htmlFiles.push(p); });
+      const htmlFiles = walk(outDir).filter(p => p.endsWith('.html'));
 
-      const indexPattern = /(^|["'()>\s])\/?(([a-z0-9\-._~%!$&'()*+,;=:@\/]+)\/)index\.html(?=["'()>\s]|$)/ig;
+      // Ищем "/.../index.html" или "./.../index.html" или "../.../index.html" или просто "index.html"
+      // Паттерн использует lookbehind, чтобы гарантировать, что мы в атрибуте/контексте ссылки
+      const pattern = /(?<=["'(\s>])((?:\.\.\/|\.\.\\|\.\/|\.\\|\/)?(?:[^"'()\s>]+?)\/)?index\.html(?=["'()\s>]|$)/ig;
 
       for (const file of htmlFiles) {
         let s = fs.readFileSync(file, 'utf8');
-        const replaced = s.replace(indexPattern, (m, prefix, pathPart) => {
-          // если pathPart пустой — это /index.html -> заменяем на '/'
-          const clean = pathPart ? `/${pathPart.replace(/\/$/,'')}` : '/';
-          return prefix + clean;
+        const replaced = s.replace(pattern, (match, prefix = '') => {
+          if (!prefix) {
+            // путь был просто "index.html" -> оставляем пустую строку
+            // если хотите заменить на '/', верните '/' вместо ''
+            return '';
+          }
+          // убираем завершающий слэш у префикса
+          return prefix.replace(/\/$/,'');
         });
+
         if (replaced !== s) {
           fs.writeFileSync(file, replaced, 'utf8');
-          this.info(`strip-index-html: updated ${file}`);
+          this.info && this.info(`strip-index-html: updated ${file}`);
         }
       }
     }
   };
 }
+
 
 export default defineConfig({
   build: {

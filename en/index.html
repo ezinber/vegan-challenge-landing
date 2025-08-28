@@ -33,10 +33,10 @@
         <a href="#how" class="nav-link nav-link_with-menu hover-opacity">how</a>
         <ul>
           <li>
-            <a href="/en/meal-plan/index.html" class="nav-link hover-opacity">meal plan</a>
+            <a href="./meal-plan/index.html" class="nav-link hover-opacity">meal plan</a>
           </li>
           <li>
-            <a href="/en/dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
+            <a href="./dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
           </li>
         </ul>
       </li>
@@ -44,12 +44,15 @@
         <a href="#results" class="nav-link nav-link_with-menu hover-opacity">results</a>
         <ul>
           <li>
-            <a href="/en/analytics/index.html" class="nav-link hover-opacity">analytics</a>
+            <a href="./analytics/index.html" class="nav-link hover-opacity">analytics</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="/" class="nav-link hover-opacity">ka</a>
+        <a href="#about" class="nav-link hover-opacity">about us</a>
+      </li>
+      <li>
+        <a href="../" class="nav-link hover-opacity">ka</a>
       </li>
   </ez-header>
 
@@ -65,7 +68,7 @@
         <div class="section__container">
           <h2 class="section__title">register</h2>
           <form action="post" class="form">
-            <label class="form__label">
+            <!-- <label class="form__label">
               <span class="form__label-text">name</span>
               <input
                 class="form__text-input"
@@ -86,8 +89,8 @@
                 autocomplete="email"
                 required
               />
-            </label>
-            <button class="form__submit-button hover-opacity" type="submit">submit</button>
+            </label> -->
+            <button id="survey-button" class="form__submit-button hover-opacity" type="button">join the challenge!</button>
           </form>
         </div>
       </section>
@@ -154,32 +157,46 @@
         <h2>Have questions?</h2>
         <div class="accordion">
           <details class="accordion__details" name="faq">
-            <summary class="accordion__summary">System configuration</summary>
-            <ul>
-              <li>200GB RAM</li>
-              <li>4PB storage</li>
-            </ul>
+            <summary class="accordion__summary">How does the Challenge work exactly?</summary>
+            <div class="accordion__content">
+              <p>After you sign up, you will be forwarded to a private Facebook group. This group will accompany you throughout the Challenge. The first step is to request to join the group, and once we approve you (please be patient, it can take up to a week), you can view and participate in the group. The group members are people who want to try a vegan lifestyle just like you, alongside a team of mentors which includes experienced vegans and registered dietitians who are all happy to answer your questions. You can also ask to be assigned a personal mentor who can support you in private.</p>
+              <p>Each day we’ll post a daily challenge or a little tip in the group, to teach you something new about a vegan lifestyle. This way, you can experience various aspects of living vegan over 22 days. You will also receive an email every few days with the daily challenges, additional information and tips.</p>
+            </div>
           </details>
 
           <details class="accordion__details" name="faq">
-            <summary class="accordion__summary">Recommended settings</summary>
-            <ul>
-              <li>Extreme mode: on</li>
-              <li>Raytracing: enabled</li>
-            </ul>
+            <summary class="accordion__summary">How does the Challenge work exactly?</summary>
+            <div class="accordion__content">
+              <p>After you sign up, you will be forwarded to a private Facebook group. This group will accompany you throughout the Challenge. The first step is to request to join the group, and once we approve you (please be patient, it can take up to a week), you can view and participate in the group. The group members are people who want to try a vegan lifestyle just like you, alongside a team of mentors which includes experienced vegans and registered dietitians who are all happy to answer your questions. You can also ask to be assigned a personal mentor who can support you in private.</p>
+              <p>Each day we’ll post a daily challenge or a little tip in the group, to teach you something new about a vegan lifestyle. This way, you can experience various aspects of living vegan over 22 days. You will also receive an email every few days with the daily challenges, additional information and tips.</p>
+            </div>
           </details>
 
           <details class="accordion__details" name="faq">
-            <summary class="accordion__summary">Other details</summary>
-            <ul>
-              <li>Material: Faux Leather, Metal</li>
-              <li>Item Weight: 10.2Kg</li>
-            </ul>
+            <summary class="accordion__summary">How does the Challenge work exactly?</summary>
+            <div class="accordion__content">
+              <p>After you sign up, you will be forwarded to a private Facebook group. This group will accompany you throughout the Challenge. The first step is to request to join the group, and once we approve you (please be patient, it can take up to a week), you can view and participate in the group. The group members are people who want to try a vegan lifestyle just like you, alongside a team of mentors which includes experienced vegans and registered dietitians who are all happy to answer your questions. You can also ask to be assigned a personal mentor who can support you in private.</p>
+              <p>Each day we’ll post a daily challenge or a little tip in the group, to teach you something new about a vegan lifestyle. This way, you can experience various aspects of living vegan over 22 days. You will also receive an email every few days with the daily challenges, additional information and tips.</p>
+            </div>
           </details>
         </div>
       </section>
+
+      <section id="about" class="section section_name_about">
+        <h2 class="section__title">about us</h2>
+        <div class="section__text">
+          <p>Vegan Georgia is a non-commercial legal entity founded in 2015. We are the first and currently the only official vegan organization in Georgia, dedicated to protecting the rights of every animal.</p>
+          <p>Our goal is to strengthen compassion and justice in Georgia and beyond — within social, cultural, and political spaces — by promoting an alternative perspective on the relationship between humans and non-human animals.</p>
+          <p>To achieve this goal, we use diverse tools and approaches that cover social, economic, and political aspects, aiming at long-term and sustainable change. We believe that violence against animals is a serious problem that, beyond individual actions, requires systemic and complex responses.</p>
+          <p>The main mission of Vegan Georgia is based on defending animal rights and fighting against their exploitation. We strongly believe in the idea of universal freedom and justice, condemn all forms of animal oppression, and fight for the liberation of living beings. At the same time, we acknowledge the strong connection between animal freedom, environmental protection, and human rights.
+            We promote plant-based nutrition as the most beneficial choice for health, the planet, and moral hygiene.</p>
+            <p>For us, every life is valuable and deserves equal respect, regardless of species. That is why we are building a world where compassion and equality are the core values for creating a just and harmonious future.</p>
+        </div>
+      </section>
   </main>
-  <footer class="section footer"></footer>
+  <footer class="section footer">
+    <p>Ⓒ Vegan Challenge</p>
+  </footer>
 
   <template id="ez-header">
     <link rel="stylesheet" type="text/css">

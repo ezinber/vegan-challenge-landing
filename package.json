@@ -13,5 +13,8 @@
   "devDependencies": {
     "vite": "^5.4.7",
     "vite-plugin-html": "^3.2.2"
+  },
+  "dependencies": {
+    "@formbricks/js": "^4.1.0"
   }
 }

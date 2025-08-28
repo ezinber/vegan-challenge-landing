@@ -160,6 +160,13 @@ p
 
 }
 
+.section__text {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1lh;
+}
+
 .section__list {
   margin: 0;
   padding: 0;
@@ -233,7 +240,7 @@ p
     width: 100%;
     max-width: 80ch;
     min-height: 50dvh;
-    padding: 0 1em 3em;
+    padding: var(--_vertical-padding) 1em 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -302,12 +309,19 @@ p
   } */
 }
 
+.footer {
+  padding: 1em;
+  min-height: fit-content;
+  color: rgb(var(--color-b));
+  background-color: rgb(var(--color-a));
+}
+
 .form {
   --_color-a: rgb(var(--color-a, #fff));
   --_color-b: rgb(var(--color-b, #000));
   --_color-accent-a: rgb(var(--color-accent-a, green));
   --_border: 2px solid var(--_color-b);
-  --_padding: .25em;
+  --_padding: .5em;
 
   width: fit-content;
   padding-top: 1em;
@@ -352,9 +366,9 @@ p
   border: var(--_border);
   border-radius: var(--_padding);
   color: var(--_color-a);
-  background-color: var(--_color-accent-a);
+  background-color: var(--_color-b);
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .card {
@@ -582,7 +596,7 @@ p
 }
 
 .accordion {
-  --_max-width: 40ch;
+  --_max-width: 50rem;
 
   width: 100%;
   max-width: var(--_max-width);
@@ -592,14 +606,44 @@ p
 }
 
 .accordion__details {
-
+  border: 2px solid currentColor;
+  border-radius: .5em;
 }
 
 .accordion__summary {
+  padding: 1em;
+  cursor: pointer;
+}
+
+.accordion__content {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1lh;
+}
+
+.tabs__summary {
   padding: .5em;
   border: 2px solid currentColor;
   border-radius: .5em;
   cursor: pointer;
+  order: -1;
+  display: block;
+}
+.tabs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tabs__content {
+  width: 100%;
+  order: 1;
+}
+
+.tabs__details {
+  display: contents;
 }
 
 .popup {
