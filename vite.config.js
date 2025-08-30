@@ -4,6 +4,47 @@ import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import fs from 'fs';
 
+// function stripIndexHtmlPlugin(outDir = 'dist') {
+//   return {
+//     name: 'strip-index-html',
+//     closeBundle() {
+//       const walk = (dir) => {
+//         const entries = fs.readdirSync(dir, { withFileTypes: true });
+//         return entries.flatMap(entry => {
+//           const p = join(dir, entry.name);
+//           return entry.isDirectory() ? walk(p) : p;
+//         });
+//       };
+
+//       const htmlFiles = walk(outDir).filter(p => p.endsWith('.html'));
+
+//       // Паттерн теперь захватывает optional prefix (например /en/ или ./) и optional query/hash после index.html
+//       // Группы:
+//       // 1 - полный префикс (может быть undefined)
+//       // 2 - query/hash (например ?a=1 или #section или ?a=1#sec)
+//       const pattern = /(?<=["'(\s>])((?:\.\.\/|\.\.\\|\.\/|\.\\|\/)?(?:[^"'()\s>]+?)\/)?index\.html((?:\?[^\s"'()#>]*)?(?:#[^\s"'()>]*)?)(?=["'()\s>]|$)/ig;
+
+//       for (const file of htmlFiles) {
+//         let s = fs.readFileSync(file, 'utf8');
+//         const replaced = s.replace(pattern, (match, prefix = '', queryHash = '') => {
+//           // если префикса нет — оставляем пустую строку, но возвращаем query/hash (если есть)
+//           const preserved = queryHash || '';
+//           if (!prefix) {
+//             return preserved;
+//           }
+//           // убираем завершающий слэш у префикса и добавляем query/hash
+//           return prefix.replace(/\/$/, '') + preserved;
+//         });
+
+//         if (replaced !== s) {
+//           fs.writeFileSync(file, replaced, 'utf8');
+//           this.info && this.info(`strip-index-html: updated ${file}`);
+//         }
+//       }
+//     }
+//   };
+// }
+
 function stripIndexHtmlPlugin(outDir = 'dist') {
   return {
     name: 'strip-index-html',
@@ -18,32 +59,73 @@ function stripIndexHtmlPlugin(outDir = 'dist') {
 
       const htmlFiles = walk(outDir).filter(p => p.endsWith('.html'));
 
-      // Паттерн теперь захватывает optional prefix (например /en/ или ./) и optional query/hash после index.html
-      // Группы:
-      // 1 - полный префикс (может быть undefined)
-      // 2 - query/hash (например ?a=1 или #section или ?a=1#sec)
-      const pattern = /(?<=["'(\s>])((?:\.\.\/|\.\.\\|\.\/|\.\\|\/)?(?:[^"'()\s>]+?)\/)?index\.html((?:\?[^\s"'()#>]*)?(?:#[^\s"'()>]*)?)(?=["'()\s>]|$)/ig;
+      // Удаление index.html (как было)
+      const indexPattern = /(?<=["'(\s>])((?:\.\.\/|\.\.\\|\.\/|\.\\|\/)?(?:[^"'()\s>]+?)\/)?index\.html((?:\?[^\s"'()#>]*)?(?:#[^\s"'()>]*)?)(?=["'()\s>]|$)/ig;
+
+      // Найти <link ... rel="stylesheet" ... href="...index-*.css[?....][#....]" ...>
+      // Группа 3 содержит значение href (включая query/hash)
+      const stylesheetLinkPattern = /<link\b(?=[^>]*\brel\s*=\s*(['"]?)stylesheet\1)(?=[^>]*\bhref\s*=\s*(['"])([^'"]*index-[^'"]+\.css(?:\?[^\s"'()#>]*)?(?:#[^\s"'()>]*)?)\2)[^>]*>/ig;
 
       for (const file of htmlFiles) {
         let s = fs.readFileSync(file, 'utf8');
-        const replaced = s.replace(pattern, (match, prefix = '', queryHash = '') => {
-          // если префикса нет — оставляем пустую строку, но возвращаем query/hash (если есть)
+
+        // 1) Удаляем/заменяем index.html в ссылках
+        s = s.replace(indexPattern, (match, prefix = '', queryHash = '') => {
           const preserved = queryHash || '';
-          if (!prefix) {
-            return preserved;
-          }
-          // убираем завершающий слэш у префикса и добавляем query/hash
+          if (!prefix) return preserved;
           return prefix.replace(/\/$/, '') + preserved;
         });
 
-        if (replaced !== s) {
-          fs.writeFileSync(file, replaced, 'utf8');
-          this.info && this.info(`strip-index-html: updated ${file}`);
-        }
+        // 2) Заменяем stylesheet link на preload-tag, сохраняя оригинальный href (group 3)
+        s = s.replace(stylesheetLinkPattern, (fullMatch, relQuote, hrefQuote, hrefValue) => {
+          // hrefValue — оригинальный href, включая query/hash
+          return `<link rel="preload" href="${hrefValue}" as="style" onload="this.onload=null;this.rel='stylesheet'" />`;
+        });
+
+        fs.writeFileSync(file, s, 'utf8');
+        this.info && this.info(`strip-index-html: updated ${file}`);
       }
     }
   };
 }
+
+// function keepPreloadPlugin() {
+//   return {
+//     name: 'keep-preload-onload-replacer',
+//     apply: 'build',
+//     enforce: 'post',
+//     writeBundle(_, bundle) {
+//       let handled = false;
+//       for (const [fileName, file] of Object.entries(bundle)) {
+//         if (file.type !== 'asset' || !fileName.endsWith('.html')) continue;
+
+//         // Показываем небольшой сниппет для диагностики
+//         const src = String(file.source);
+//         console.log('[keep-preload] processing', fileName);
+//         console.log('[keep-preload] snippet:', src.slice(0, 500).replace(/\n/g, '\\n'));
+
+//         // Простая, надёжная замена: для каждого <link ... rel="stylesheet" ...>
+//         const newSrc = src.replace(/<link\b([^>]*)\brel\s*=\s*(["'])stylesheet\2([^>]*)>/gi, (full, a, q, b) => {
+//           const attrs = (a + ' ' + b).trim();
+
+//           // Если уже есть as=style или onload — не трогаем
+//           if (/\bas\s*=\s*(["'])?style\1?/i.test(attrs) || /\bonload\s*=/i.test(attrs)) return full;
+
+//           // Удаляем rel=stylesheet из attrs (на всякий)
+//           const preserved = attrs.replace(/\brel\s*=\s*(["'])?stylesheet\1?/i, '').trim();
+//           const extra = preserved ? ' ' + preserved : '';
+
+//           handled = true;
+//           return `<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"${extra}>`;
+//         });
+
+//         if (newSrc !== src) file.source = newSrc;
+//       }
+//       if (handled) console.log('[keep-preload] replacements applied');
+//       else console.log('[keep-preload] no matches found');
+//     }
+//   };
+// }
 
 
 export default defineConfig({
@@ -72,9 +154,10 @@ export default defineConfig({
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
-        minifyCSS: false,
+        minifyCSS: true,
       },
     }),
     stripIndexHtmlPlugin('dist'),
+    // keepPreloadPlugin(),
   ],
 });
