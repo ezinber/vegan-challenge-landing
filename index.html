@@ -41,12 +41,7 @@
         </ul>
       </li>
       <li>
-        <a href="#results" class="nav-link nav-link_with-menu hover-opacity">results</a>
-        <ul>
-          <li>
-            <a href="/analytics/index.html" class="nav-link hover-opacity">analytics</a>
-          </li>
-        </ul>
+        <a href="#faq" class="nav-link hover-opacity">faq</a>
       </li>
       <li>
         <a href="/en/index.html" class="nav-link hover-opacity">en</a>
@@ -182,7 +177,143 @@
   <footer class="section footer"></footer>
 
   <template id="ez-header">
-    <link rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css"> -->
+    <style>
+      :host {
+        --_transition: var(--transition-a, .2s linear);
+        --_background-color: rgb(var(--color-b, #000));
+        --_multiplier: var(--multiplier-1_25, 1);
+        --_burger-line-width: 3px;
+
+        display: flex;
+        margin: .5em;
+        padding: 0 .5em;
+        font-size: calc(1rem * var(--_multiplier));
+        align-items: center;
+        position: fixed;
+        top: 0;
+        background-color: var(--_background-color);
+        border-radius: 1em;
+        backdrop-filter: blur(8px);
+        box-shadow: 2px 2px 4px black;
+        z-index: 3;
+        opacity: 1;
+        transition:
+          opacity var(--_transition),
+          height var(--_transition),
+          width var(--_transition);
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        transition:
+          opacity var(--_transition),
+          color var(--_transition);
+        opacity: var(--_nav-opacity);
+        visibility: var(--_nav-visibility);
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: .5em;
+      }
+
+      ::slotted(li) {
+        width: 100%;
+        display: flex;
+        position: relative;
+        text-align: center;
+      }
+
+      button {
+        font-size: inherit;
+        display: none;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 3em;
+        height: 3em;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        z-index: 1;
+
+        &::before,
+        &::after {
+          content: '';
+          width: 50%;
+          height: var(--_burger-line-width);
+          background-color: currentColor;
+          transition: var(--_transition);
+        }
+      }
+
+      .opened {
+        gap: 0;
+
+        &::before {
+          transform: translateY(var(--_burger-line-width)) rotate(-45deg);
+        }
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+
+      @media (width <= 640px) {
+        :host {
+          --_nav-opacity: 0;
+          --_nav-visibility: hidden;
+
+          width: 3em;
+          height: 3em;
+          padding: 0;
+          top: auto;
+          left: auto;
+          right: 0;
+          bottom: 0;
+        }
+
+        :host(.extended) {
+          --_nav-opacity: 1;
+          --_nav-visibility: visible;
+
+          width: fit-content;
+          height: fit-content;
+          padding: 1em 1em 3em;
+        }
+
+        ul {
+          min-width: 100%;
+          min-height: 100%;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          justify-content: center;
+          z-index: 1;
+        }
+
+        button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: .2em;
+          transition: gap var(--_transition);
+        }
+      }
+    </style>
+
     <nav>
       <ul>
         <slot>
@@ -196,7 +327,115 @@
   </template>
 
   <template id="ez-dialog">
-    <link rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css"> -->
+    <style>
+      :host {
+        --_gap: var(--gap, 1.5em);
+        --_sides-padding: var(--prefer-sides-padding, var(--_gap));
+        --_background-color: var(--color-background-b, #000);
+        --_backdrop-filter: var(--backdrop-filter, blur(8px));
+        --_transition: var(--transition-a, .2s linear);
+        --_close-button-color: rgb(var(--color-a, 255, 255, 255));
+
+        display: block;
+        height: 100%;
+        font-size: inherit;
+      }
+
+      button {
+        box-sizing: border-box;
+        padding: 0;
+        width: 100%;
+        height: inherit;
+        background: none;
+        border: none;
+        font-size: inherit;
+        cursor: pointer;
+        z-index: 1;
+        text-align: start;
+        color: inherit;
+        font-family: inherit;
+        line-height: inherit;
+      }
+
+      button[type="submit"] {
+        width: 2em;
+        aspect-ratio: 1;
+        margin: .5em 0 0 .5em;
+        display: block;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          top: 50%;
+          background-color: var(--_close-button-color);
+          rotate: 45deg;
+        }
+
+        &::after {
+          rotate: -45deg;
+        }
+      }
+
+      form {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+      }
+
+      .close-btn {
+        position: fixed;
+        width: fit-content;
+        padding: .5em;
+        bottom: 0;
+        right: 0;
+      }
+
+      dialog {
+        padding: 0;
+        border: none;
+        background: none;
+        opacity: 0;
+        transition:
+          opacity var(--_transition),
+          overlay var(--_transition) allow-discrete,
+          display var(--_transition) allow-discrete;
+
+        &::backdrop {
+          background-color: transparent;
+          backdrop-filter: none;
+          transition:
+            display var(--_transition) allow-discrete,
+            overlay var(--_transition) allow-discrete,
+            background-color var(--_transition),
+            backdrop-filter var(--_transition);
+        }
+
+        &:open {
+          opacity: 1;
+
+          @starting-style {
+            opacity: 0;
+          }
+
+          &::backdrop {
+            background-color: var(--_background-color);
+            backdrop-filter: var(--_backdrop-filter);
+
+            @starting-style {
+              backdrop-filter: none;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    </style>
+
     <button type="button">
       <slot name="button"></slot>
     </button>

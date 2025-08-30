@@ -66,11 +66,8 @@ form {
 }
 
 dialog {
-  /* max-width: calc(100vw - var(--_sides-padding) * 2); */
-  /* max-height: calc(calc(100vh - var(--_gap) * 2)); */
   padding: 0;
   border: none;
-  /* border-radius: var(--_gap); */
   background: none;
   opacity: 0;
   transition:

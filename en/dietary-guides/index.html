@@ -38,15 +38,10 @@
         </ul>
       </li>
       <li>
-        <p class="nav-link nav-link_with-menu hover-opacity">results</p>
-        <ul>
-          <li>
-            <a href="../index.html#results" class="nav-link hover-opacity">results</a>
-          </li>
-          <li>
-            <a href="../analytics/index.html" class="nav-link hover-opacity">analytics</a>
-          </li>
-        </ul>
+        <a href="../index.html#faq" class="nav-link hover-opacity">faq</a>
+      </li>
+      <li>
+        <a href="../index.html#about" class="nav-link hover-opacity">about</a>
       </li>
       <li>
         <a href="../../dietary-guides/index.html" class="nav-link hover-opacity">ka</a>
@@ -63,7 +58,143 @@
   <footer class="section footer"></footer>
 
   <template id="ez-header">
-    <link rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css"> -->
+    <style>
+      :host {
+        --_transition: var(--transition-a, .2s linear);
+        --_background-color: rgb(var(--color-b, #000));
+        --_multiplier: var(--multiplier-1_25, 1);
+        --_burger-line-width: 3px;
+
+        display: flex;
+        margin: .5em;
+        padding: 0 .5em;
+        font-size: calc(1rem * var(--_multiplier));
+        align-items: center;
+        position: fixed;
+        top: 0;
+        background-color: var(--_background-color);
+        border-radius: 1em;
+        backdrop-filter: blur(8px);
+        box-shadow: 2px 2px 4px black;
+        z-index: 3;
+        opacity: 1;
+        transition:
+          opacity var(--_transition),
+          height var(--_transition),
+          width var(--_transition);
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        transition:
+          opacity var(--_transition),
+          color var(--_transition);
+        opacity: var(--_nav-opacity);
+        visibility: var(--_nav-visibility);
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: .5em;
+      }
+
+      ::slotted(li) {
+        width: 100%;
+        display: flex;
+        position: relative;
+        text-align: center;
+      }
+
+      button {
+        font-size: inherit;
+        display: none;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 3em;
+        height: 3em;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        z-index: 1;
+
+        &::before,
+        &::after {
+          content: '';
+          width: 50%;
+          height: var(--_burger-line-width);
+          background-color: currentColor;
+          transition: var(--_transition);
+        }
+      }
+
+      .opened {
+        gap: 0;
+
+        &::before {
+          transform: translateY(var(--_burger-line-width)) rotate(-45deg);
+        }
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+
+      @media (width <= 640px) {
+        :host {
+          --_nav-opacity: 0;
+          --_nav-visibility: hidden;
+
+          width: 3em;
+          height: 3em;
+          padding: 0;
+          top: auto;
+          left: auto;
+          right: 0;
+          bottom: 0;
+        }
+
+        :host(.extended) {
+          --_nav-opacity: 1;
+          --_nav-visibility: visible;
+
+          width: fit-content;
+          height: fit-content;
+          padding: 1em 1em 3em;
+        }
+
+        ul {
+          min-width: 100%;
+          min-height: 100%;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          justify-content: center;
+          z-index: 1;
+        }
+
+        button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: .2em;
+          transition: gap var(--_transition);
+        }
+      }
+    </style>
+
     <nav>
       <ul>
         <slot>
@@ -74,19 +205,6 @@
     <button type="menu" aria-label="Menu">
       <span></span>
     </button>
-  </template>
-
-  <template id="ez-dialog">
-    <link rel="stylesheet" type="text/css">
-    <button type="button">
-      <slot name="button"></slot>
-    </button>
-    <dialog>
-      <slot name="content"></slot>
-      <form method="dialog">
-        <button type="submit" class="hover-opacity"></button>
-      </form>
-    </dialog>
   </template>
 
   <script async type="module" src="../../src/scripts/index.js"></script>

@@ -14,7 +14,7 @@ class EzHeader extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.content = document.getElementById('ez-header').content.cloneNode(true);
-    this.content.querySelector('link').href=`${import.meta.resolve('./ez-header.css')}`;
+    // this.content.querySelector('link').href=`${import.meta.resolve('./ez-header.css')}`;
     this.shadowRoot.appendChild(this.content);
     this.listElements = this.shadowRoot.querySelector('slot').assignedElements();
     this.linksAndTargets = [];

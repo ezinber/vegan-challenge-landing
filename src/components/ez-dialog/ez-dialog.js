@@ -14,7 +14,7 @@ class EzDialog extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.content = document.getElementById('ez-dialog').content.cloneNode(true);
-    this.content.querySelector('link').href=`${import.meta.resolve('./ez-dialog.css')}`;
+    // this.content.querySelector('link').href=`${import.meta.resolve('./ez-dialog.css')}`;
     this.shadowRoot.appendChild(this.content);
     this.dialogOpenButton = this.shadowRoot.querySelector('button');
     this.dialog = this.shadowRoot.querySelector('dialog');
