@@ -300,8 +300,8 @@
             <ez-dialog hidden>
               <article class="card" slot="button">
                 <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
-                <h3 class="card__title">for the animals</h3>
-                <p class="card__description">More than 200 million animals are killed for food around the world every day. But we have the power, through our everyday choices, to improve outcomes for animals. Vote with your fork and choose plant-based.</p>
+                <h3 class="card__title">For the Animals: Compassion in Action</h3>
+                <p class="card__description">This choice is a powerful stand for kindness. It aligns your daily actions with the value of compassion for all living beings. By exploring veganism, you are directly reducing demand for systems that cause animal suffering, choosing instead a lifestyle that celebrates life and freedom for all creatures.</p>
               </article>
               <div class="popup" slot="content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
@@ -312,8 +312,8 @@
             <ez-dialog hidden>
               <article class="card" slot="button">
                 <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
-                <h3 class="card__title">for our planet</h3>
-                <p class="card__description">Animal farming is responsible for deforestation, greenhouse gas emissions, and water shortages – all of which contribute to the climate change crisis we are facing. Enjoy a lifestyle that is gentler on our environment.</p>
+                <h3 class="card__title">For the Environment: A Lighter Footprint</h3>
+                <p class="card__description">Your plate is one of the simplest and most effective tools for environmental change. A plant-based diet significantly reduces your carbon footprint, conserves precious water resources, and helps protect biodiversity. By choosing plants, you're voting for a more sustainable and kind world, ensuring our beautiful planet thrives for generations to come.</p>
               </article>
               <div class="popup" slot="content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
@@ -324,8 +324,20 @@
             <ez-dialog hidden>
               <article class="card" slot="button">
                 <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
-                <h3 class="card__title">for our health</h3>
-                <p class="card__description">Better health starts on your plate. Choosing plant-based alternatives can improve our everyday health, lower our intake of saturated fat, and reduce the risk of heart disease and certain cancers.</p>
+                <h3 class="card__title">For Your Health: Feel Vibrant & Energized</h3>
+                <p class="card__description">Choosing a plant-based diet is a powerful gift to your body. It's a chance to nourish yourself with foods rich in vitamins, fiber and antioxidants. Many people who take the challenge report feeling more energetic, experiencing better digestion and discovering a new relationship with food that focuses on nourishment and vitality. It’s not about restriction; it’s about fueling your body with the very best nature has to offer.</p>
+              </article>
+              <div class="popup" slot="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
+              </div>
+            </ez-dialog>
+          </li>
+          <li>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="https://picsum.photos/200" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">For Culinary Adventure: Discover a World of Taste</h3>
+                <p class="card__description">Get ready to explode your taste buds! Vegan cuisine is far from boring; it's a fascinating exploration of global flavors, innovative recipes, and delicious, wholesome ingredients. This is your passport to discovering new favorite dishes, experimenting with spices, and falling in love with food all over again. It’s a creative and joyful culinary journey.</p>
               </article>
               <div class="popup" slot="content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni possimus ipsum facere nesciunt, qui repellendus cupiditate magnam reiciendis provident, autem, incidunt recusandae! Vitae id aspernatur dolorem consequuntur sit eaque!</p>
@@ -565,11 +577,15 @@
         font-size: inherit;
       }
 
+      ::slotted([slot='button']) {
+        height: 100%;
+      }
+
       button {
         box-sizing: border-box;
         padding: 0;
         width: 100%;
-        height: inherit;
+        height: 100%;
         background: none;
         border: none;
         font-size: inherit;

@@ -89,45 +89,6 @@ function stripIndexHtmlPlugin(outDir = 'dist') {
   };
 }
 
-// function keepPreloadPlugin() {
-//   return {
-//     name: 'keep-preload-onload-replacer',
-//     apply: 'build',
-//     enforce: 'post',
-//     writeBundle(_, bundle) {
-//       let handled = false;
-//       for (const [fileName, file] of Object.entries(bundle)) {
-//         if (file.type !== 'asset' || !fileName.endsWith('.html')) continue;
-
-//         // Показываем небольшой сниппет для диагностики
-//         const src = String(file.source);
-//         console.log('[keep-preload] processing', fileName);
-//         console.log('[keep-preload] snippet:', src.slice(0, 500).replace(/\n/g, '\\n'));
-
-//         // Простая, надёжная замена: для каждого <link ... rel="stylesheet" ...>
-//         const newSrc = src.replace(/<link\b([^>]*)\brel\s*=\s*(["'])stylesheet\2([^>]*)>/gi, (full, a, q, b) => {
-//           const attrs = (a + ' ' + b).trim();
-
-//           // Если уже есть as=style или onload — не трогаем
-//           if (/\bas\s*=\s*(["'])?style\1?/i.test(attrs) || /\bonload\s*=/i.test(attrs)) return full;
-
-//           // Удаляем rel=stylesheet из attrs (на всякий)
-//           const preserved = attrs.replace(/\brel\s*=\s*(["'])?stylesheet\1?/i, '').trim();
-//           const extra = preserved ? ' ' + preserved : '';
-
-//           handled = true;
-//           return `<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"${extra}>`;
-//         });
-
-//         if (newSrc !== src) file.source = newSrc;
-//       }
-//       if (handled) console.log('[keep-preload] replacements applied');
-//       else console.log('[keep-preload] no matches found');
-//     }
-//   };
-// }
-
-
 export default defineConfig({
   build: {
     appType: 'mpa',
@@ -154,10 +115,9 @@ export default defineConfig({
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
-        minifyCSS: true,
+        minifyCSS: false,
       },
     }),
     stripIndexHtmlPlugin('dist'),
-    // keepPreloadPlugin(),
   ],
 });

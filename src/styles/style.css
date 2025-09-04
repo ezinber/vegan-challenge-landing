@@ -360,6 +360,7 @@ p
 
 .card__description {
   position: relative;
+  flex-grow: 1;
 
   &::before,
   &::after {
