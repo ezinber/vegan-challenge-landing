@@ -25,6 +25,7 @@
       --transition-a: .2s ease-in;
       --drop-shadow-a: drop-shadow(0 0 .5em);
       --font-size-a: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
+      --padding-a: 1em;
   
       --min-width-rem: 20rem;
       --max-width-rem: 90rem;
@@ -365,6 +366,7 @@
             <li>Join a special Challenge Facebook group (click on “Join Group”)</li>
             <li>Every day, you’ll get recipes, tips, and loads of inspiration!</li>
           </ul>
+        </div>
       </section>
 
       <section id="faq" class="section section_name_faq">
@@ -398,14 +400,87 @@
 
       <section id="about" class="section section_name_about">
         <h2 class="section__title">about us</h2>
-        <div class="section__text">
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>Vegan Georgia is a non-commercial legal entity founded in 2015. We are the first and currently the only official vegan organization in Georgia, dedicated to protecting the rights of every animal.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>Our goal is to strengthen compassion and justice in Georgia and beyond — within social, cultural, and political spaces — by promoting an alternative perspective on the relationship between humans and non-human animals.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>To achieve this goal, we use diverse tools and approaches that cover social, economic, and political aspects, aiming at long-term and sustainable change. We believe that violence against animals is a serious problem that, beyond individual actions, requires systemic and complex responses.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>The main mission of Vegan Georgia is based on defending animal rights and fighting against their exploitation. We strongly believe in the idea of universal freedom and justice, condemn all forms of animal oppression, and fight for the liberation of living beings.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>At the same time, we acknowledge the strong connection between animal freedom, environmental protection, and human rights.
+              We promote plant-based nutrition as the most beneficial choice for health, the planet, and moral hygiene.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>For us, every life is valuable and deserves equal respect, regardless of species. That is why we are building a world where compassion and equality are the core values for creating a just and harmonious future.</p>
+          </div>
+        </div>
+
+        <!-- <div class="section__text">
           <p>Vegan Georgia is a non-commercial legal entity founded in 2015. We are the first and currently the only official vegan organization in Georgia, dedicated to protecting the rights of every animal.</p>
           <p>Our goal is to strengthen compassion and justice in Georgia and beyond — within social, cultural, and political spaces — by promoting an alternative perspective on the relationship between humans and non-human animals.</p>
           <p>To achieve this goal, we use diverse tools and approaches that cover social, economic, and political aspects, aiming at long-term and sustainable change. We believe that violence against animals is a serious problem that, beyond individual actions, requires systemic and complex responses.</p>
           <p>The main mission of Vegan Georgia is based on defending animal rights and fighting against their exploitation. We strongly believe in the idea of universal freedom and justice, condemn all forms of animal oppression, and fight for the liberation of living beings. At the same time, we acknowledge the strong connection between animal freedom, environmental protection, and human rights.
             We promote plant-based nutrition as the most beneficial choice for health, the planet, and moral hygiene.</p>
             <p>For us, every life is valuable and deserves equal respect, regardless of species. That is why we are building a world where compassion and equality are the core values for creating a just and harmonious future.</p>
-        </div>
+        </div> -->
       </section>
   </main>
   <footer class="section footer">
@@ -575,6 +650,7 @@
         --_backdrop-filter: var(--backdrop-filter, blur(8px));
         --_transition: var(--transition-a, .2s linear);
         --_close-button-color: rgb(var(--color-a, 255, 255, 255));
+        --_backdrop-color: rgba(var(--color-b, 0 0 0), var(--opacity-a, .8));
 
         display: block;
         height: 100%;
@@ -604,7 +680,6 @@
       button[type="submit"] {
         width: 2em;
         aspect-ratio: 1;
-        margin: .5em 0 0 .5em;
         display: block;
         position: relative;
       }
@@ -626,9 +701,9 @@
       }
 
       form {
-        position: relative;
         width: fit-content;
         height: fit-content;
+        margin: .5em auto 0;
       }
 
       .close-btn {
@@ -665,7 +740,7 @@
       }
 
       dialog:open::backdrop {
-        background-color: var(--_background-color);
+        background-color: var(--_backdrop-color);
         backdrop-filter: var(--_backdrop-filter);
       }
 
