@@ -329,6 +329,7 @@ p
 
   max-width: 25ch;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   gap: 1lh;
@@ -358,9 +359,15 @@ p
   }
 }
 
+.card__subtitle {
+  font-style: italic;
+}
+
 .card__description {
   position: relative;
   flex-grow: 1;
+  max-height: 10lh;
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -386,6 +393,17 @@ p
     border-top: none;
     border-left: none;
   }
+}
+
+.card__more-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1lh;
+  background: linear-gradient(to right, transparent, var(--_color-a) 50%);
+  font-style: italic;
+  text-align: end;
 }
 
 /* .nav-link {
