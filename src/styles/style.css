@@ -270,11 +270,39 @@ p
 
 .footer {
   --_color-a: rgb(var(--color-a));
+  --_color-b: rgb(var(--color-b));
 
-  padding: 1em;
+  padding: 1em 1em 5em;
   min-height: fit-content;
   color: rgb(var(--color-b));
   background-color: var(--_color-a);
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.footer__social-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+  list-style: none;
+
+  & > li {
+    /* block-size: fit-content;
+    inline-size: fit-content; */
+    display: flex;
+  }
+}
+
+.footer__social-link {
+  display: inline-flex;
+  color: inherit;
+
+  & > svg {
+    fill: currentColor;
+    block-size: 2lh;
+    inline-size: 2lh;
+  }
 }
 
 .form {
@@ -559,10 +587,8 @@ p
   min-height: 100dvh;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
-  justify-content: space-around;
+  place-items: center;
+  place-content: space-evenly;
   gap: 2em;
 
   &:nth-of-type(2n) {

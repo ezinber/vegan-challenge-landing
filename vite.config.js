@@ -111,8 +111,8 @@ export default defineConfig({
       minify: {
         collapseWhitespace: true,
         removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
+        removeRedundantAttributes: false,
+        removeScriptTypeAttributes: false,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
         minifyCSS: false,
