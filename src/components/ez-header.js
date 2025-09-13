@@ -159,11 +159,6 @@ template.innerHTML = `
  * @extends HTMLElement
  */
 class EzHeader extends HTMLElement {
-  /**
-   * Constructs a new `EzHeader` instance.
-   *
-   * @constructor
-   */
   constructor() {
     super();
     this.attachShadow({mode: 'open'});
@@ -179,8 +174,13 @@ class EzHeader extends HTMLElement {
    */
   createLinksAntTargetsList() {
     this.listElements.forEach(i => {
+      let target;
       const link = i.querySelector('a');
-      const target = document.getElementById(link?.getAttribute('href')?.slice(1));
+      const href = link?.getAttribute('href');
+
+      if (href?.startsWith('#')) {
+        target = document.getElementById(href.slice(1));
+      }
 
       if (target) {
         this.linksAndTargets.push({ link, target });
@@ -254,7 +254,10 @@ class EzHeader extends HTMLElement {
    */
   setEventListeners() {
     this.burgerElement.addEventListener('click', this.handleBurgerMenuClick.bind(this));
-    window.addEventListener('scroll', this.handleLinksScroll.bind(this));
+
+    if (this.linksAndTargets.length > 0) {
+      window.addEventListener('scroll', this.handleLinksScroll.bind(this));
+    }
   }
 
   /**
@@ -264,7 +267,10 @@ class EzHeader extends HTMLElement {
    * @returns {void}
    */
   connectedCallback() {
-    this.createLinksAntTargetsList();
+    if (this.dataset.activeClass) {
+      this.createLinksAntTargetsList();
+    }
+
     this.setEventListeners();
   }
 }

@@ -45,6 +45,10 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       scroll-behavior: smooth;
+
+      @view-transition {
+        navigation: auto;
+      }
     }
   
     * {
@@ -81,7 +85,7 @@
       --_vertical-padding: 25vh;
       --_color-a: rgb(var(--color-a));
       --_color-b: rgb(var(--color-b));
-  
+      
       width: 100%;
       min-height: 100dvh;
       padding: var(--_vertical-padding) 5%;
@@ -228,7 +232,7 @@
 </head>
 
 <body>
-  <ez-header data-active-class="nav-link_active" hidden>
+  <ez-header hidden>
       <li>
         <a href="../index.html#signup" class="nav-link hover-opacity">sign up</a>
       </li>
