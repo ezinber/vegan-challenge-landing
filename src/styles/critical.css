@@ -1,0 +1,218 @@
+:root {
+  --color-a: 214, 252, 227;
+  --color-b: 12, 56, 26;
+  --color-accent-a: 40, 190, 90;
+  --opacity-a: .8;
+  --opacity-b: .6;
+  --opacity-c: .4;
+  --transition-a: .2s ease-in;
+  --drop-shadow-a: drop-shadow(0 0 .5rem);
+  --font-size-a: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
+  --shadow-offset-a: -.5rem .5rem .5rem;
+
+  --min-width-rem: 20rem;
+  --max-width-rem: 90rem;
+
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgb(var(--color-a));
+  background-color: rgb(var(--color-b));
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 calc(50% - var(--max-width-rem) / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: var(--min-width-rem);
+  min-height: 100vh;
+  font-size: var(--font-size-a);
+}
+
+main {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.hero {
+  --_vertical-padding: 25vh;
+  --_color-a: rgb(var(--color-a));
+  --_color-b: rgb(var(--color-b));
+  --_linear-gradient: linear-gradient(rgba(var(--color-b), var(--opacity-c)));
+  --_padding-a: var(--padding-a, 1em);
+
+  width: 100%;
+  min-height: 100dvh;
+  padding: var(--_vertical-padding) var(--_padding-a);
+  align-items: center;
+  row-gap: 3em;
+  padding-bottom: 0;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 1fr 1fr;
+  background-image:
+    var(--_linear-gradient),
+    url(../images/hero.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero__title {
+  --_text-shadow-a: 0 0 .2em var(--_color-b);
+  font-size: 2em;
+  text-align: center;
+  text-wrap-style: balance;
+  text-shadow:
+    var(--_text-shadow-a),
+    var(--_text-shadow-a),
+    var(--_text-shadow-a),
+    var(--_text-shadow-a);
+  opacity: 1;
+  transition: opacity var(--transition-a);
+  align-self: flex-end;
+}
+
+@starting-style {
+  .hero__title {
+    opacity: 0;
+  }
+}
+
+.hero__subtitle {
+  max-width: 80ch;
+  margin-top: auto;
+  padding: 1em;
+  background-color: var(--_color-a);
+  border-radius: 1em 1em 0 0;
+  color: var(--_color-b);
+}
+
+.hero__subtitle::after {
+  content: '';
+  display: block;
+  width: 1em;
+  margin: 1em auto .5em;
+  aspect-ratio: 1;
+  border: 2px solid var(--_color-b);
+  border-left: none;
+  border-bottom: none;
+  rotate: 135deg;
+  animation: jumpInfinite 2s infinite;
+}
+
+.nav-link {
+  --_transition: var(--transition-a, .2s linear);
+  --_background-color: rgb(var(--_color-b, #000));
+
+  width: 100%;
+  padding: .5em;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: lowercase;
+  text-align: start;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  color: currentColor;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  height: .2em;
+  left: 40%;
+  right: 40%;
+  bottom: 0;
+  border-radius: .2em .2em 0 0;
+  transform: translateY(.25em);
+  background-color: currentColor;
+  transition: transform var(--_transition);
+  z-index: -1;
+}
+
+.nav-link_active::after {
+  transform: translateY(0);
+}
+
+.nav-link_with-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+}
+
+.nav-link_with-menu::before {
+  content: '▶';
+  font-size: .7em;
+  transition: transform var(--_transition);
+  transition-delay: .5s;
+}
+
+.nav-link_with-menu:hover::before {
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition-delay: 0s;
+}
+
+.nav-link_with-menu + ul {
+  margin: 0;
+  padding: 1em;
+  position: absolute;
+  inset: 1.5lh auto auto 50%;
+  transform: translateX(-50%);
+  background-color: var(--_background-color);
+  list-style: none;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity var(--_transition),
+    visibility var(--_transition);
+  transition-delay: .5s;
+  border-radius: 1em;
+  box-shadow: 2px 2px 4px black;
+}
+
+.nav-link_with-menu:hover + ul,
+.nav-link_with-menu + ul:hover {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+@media (width <= 40rem) {
+  .nav-link_with-menu + ul {
+    inset: auto 100% 50% auto;
+    transform: translateY(50%);
+  }
+}

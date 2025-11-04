@@ -3,25 +3,29 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./index.css">
   <link rel="preload" href="../src/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" as="image" href="../src/images/hero.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="description of the webpage" />
   <meta property="og:locale" content="en" />
-  <!-- <meta property="og:url" content="https://futurefood.vgn.ge" /> -->
+  <meta property="og:url" content="https://challenge.vgn.ge" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="vegan challenge" />
   <meta property="og:title" content="vegan challenge" />
   <meta property="og:description" content="vegan challenge" />
-  <!-- <meta property="og:image" content="https://futurefood.ezinber.com/og.webp" /> -->
+  <!-- <meta property="og:image" content="https://challenge.ezinber.com/og.webp" /> -->
   <title>Ecolution: Vegan Challenge</title>
-  <style>
+  <!-- <style>
     :root {
-      --color-a: 214, 252, 227;
-      --color-b: 12, 56, 26;
-      --color-accent-a: 40, 190, 90;
+      color: rgb(233, 247, 211);
+      --color-a: 233, 247, 211;
+      --color-b: 38, 87, 47;
+      --color-c: 98, 134, 37;
+      --color-accent-a: 33, 136, 151;
       --opacity-a: .8;
       --opacity-b: .6;
+      --opacity-c: .4;
       --transition-a: .2s ease-in;
       --drop-shadow-a: drop-shadow(0 0 .5em);
       --font-size-a: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
@@ -83,7 +87,7 @@
       --_vertical-padding: 25vh;
       --_color-a: rgb(var(--color-a));
       --_color-b: rgb(var(--color-b));
-      --_linear-gradient: linear-gradient(rgba(var(--color-b), var(--opacity-b)));
+      --_linear-gradient: linear-gradient(rgba(var(--color-b), var(--opacity-c)));
       --_padding-a: var(--padding-a, 1em);
 
       width: 100%;
@@ -105,10 +109,15 @@
     }
 
     .hero__title {
+      --_text-shadow-a: 0 0 .2em var(--_color-b);
       font-size: 2em;
       text-align: center;
       text-wrap-style: balance;
-      text-shadow: 0 0 .5em var(--_color-b);
+      text-shadow:
+        var(--_text-shadow-a),
+        var(--_text-shadow-a),
+        var(--_text-shadow-a),
+        var(--_text-shadow-a);
       opacity: 1;
       transition: opacity var(--transition-a);
       align-self: flex-end;
@@ -228,7 +237,7 @@
         transform: translateY(50%);
       }
     }
-  </style>
+  </style> -->
   <script type="module" src="../src/scripts/index.js"></script>
 </head>
 
@@ -492,7 +501,7 @@
   </main>
   <footer class="section footer">
     <a href="https://vegangeorgia.org" target="_blank" class="footer__logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 975.9 372.3">
         <use href="../src/svg/vg-logo.svg">
       </svg>
     </a>

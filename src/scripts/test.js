@@ -1,0 +1,1 @@
+document.querySelector('[as="style"]').rel = 'stylesheet';
