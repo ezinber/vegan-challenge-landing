@@ -685,6 +685,16 @@ p
     font-weight: 800;
     padding-left: 1ch;
   }
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1lh;
+
+    & span {
+      font-weight: 800;
+    }
+  }
 }
 
 .tabs__summary {

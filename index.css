@@ -1,1 +1,5 @@
 @import url(./src/styles/critical.css);
+
+.hero__title {
+  font-size: 1.4em;
+}
