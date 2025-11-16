@@ -158,6 +158,20 @@ p {
   animation: jumpInfinite 2s infinite;
 }
 
+/* .logo {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(var(--color-a));
+  border-radius: 50%;
+
+  & > svg {
+    width: 85%;
+  }
+} */
+
 .nav-link {
   --_transition: var(--transition-a, .2s linear);
   --_background-color: rgb(var(--_color-b, #000));

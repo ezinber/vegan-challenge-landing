@@ -1,9 +1,10 @@
 const template = document.createElement('template');
 
-template.innerHTML = `
+template.innerHTML = /*html*/`
   <style>
     :host {
       --_transition: var(--transition-a, .2s linear);
+      --_color-a: var(--color-a, #fff);
       --_background-color: rgb(var(--color-b, #000));
       --_font-size: var(--font-size-a, 1rem);
       --_burger-line-width: 3px;
@@ -17,7 +18,6 @@ template.innerHTML = `
       top: 0;
       background-color: var(--_background-color);
       border-radius: 1em;
-      backdrop-filter: blur(8px);
       box-shadow: 2px 2px 4px black;
       z-index: 3;
       opacity: 1;
@@ -25,6 +25,25 @@ template.innerHTML = `
         opacity var(--_transition),
         height var(--_transition),
         width var(--_transition);
+
+      &:has(a[slot="logo"]) {
+        padding-left: 2.5rem;
+        margin-left: 2.5rem;
+        border-top-left-radius: 0;
+      }
+    }
+
+    ::slotted(a[slot="logo"]) {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(var(--_color-a));
+      border-radius: 50%;
+      padding: .4rem;
+      position: absolute;
+      left: -5rem;
     }
 
     @starting-style {
@@ -36,12 +55,18 @@ template.innerHTML = `
     nav {
       display: flex;
       justify-content: center;
+      position: relative;
       flex: 1;
       transition:
         opacity var(--_transition),
         color var(--_transition);
       opacity: var(--_nav-opacity);
       visibility: var(--_nav-visibility);
+
+      &:has(.logo) {
+        padding-left: 5rem;
+        background-color: red;
+      }
     }
 
     ul {
@@ -108,6 +133,17 @@ template.innerHTML = `
         left: auto;
         right: 0;
         bottom: 0;
+
+        &:has(a[slot="logo"]) {
+          border-radius: 1em;
+          padding: 2.5rem .5em .5em;
+        }
+      }
+
+      ::slotted(a[slot="logo"]) {
+        position: absolute;
+        top: -5rem;
+        left: calc(50% - 2.5rem);
       }
 
       :host(.extended) {
@@ -117,6 +153,10 @@ template.innerHTML = `
         width: fit-content;
         height: fit-content;
         padding: 1em 1em 3em;
+      }
+
+      nav {
+        flex-direction: column;
       }
 
       ul {
@@ -141,6 +181,7 @@ template.innerHTML = `
   </style>
 
   <nav>
+    <slot name="logo"></slot>
     <ul>
       <slot>
         <!-- <li> elements expected -->
@@ -163,7 +204,7 @@ class EzHeader extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(template.content.cloneNode('true'));
-    this.listElements = this.shadowRoot.querySelector('slot').assignedElements();
+    this.listElements = this.shadowRoot.querySelector('ul > slot').assignedElements();
     this.linksAndTargets = [];
     this.burgerElement = this.shadowRoot.querySelector('button');
     this.timeout = null;
