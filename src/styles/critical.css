@@ -5,6 +5,7 @@
   --opacity-a: .8;
   --opacity-b: .6;
   --opacity-c: .4;
+  --width-a: min(50rem, 100%);
   --transition-a: .2s ease-in;
   --drop-shadow-a: drop-shadow(0 0 .5rem);
   --font-size-a: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
@@ -62,12 +63,18 @@ p {
   margin: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .hero {
   --_vertical-padding: 25vh;
   --_color-a: rgb(var(--color-a));
   --_color-b: rgb(var(--color-b));
   --_linear-gradient: linear-gradient(rgba(var(--color-b), var(--opacity-c)));
   --_padding-a: var(--padding-a, 1em);
+  --_width-a: var(--width-a, 100%);
 
   width: 100%;
   min-height: 100dvh;
@@ -88,43 +95,39 @@ p {
 }
 
 .hero__title {
-  --_text-shadow-a: 0 0 .2em var(--_color-b);
-
+  width: var(--_width-a);
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   font-size: 2em;
   text-align: center;
   text-wrap-style: balance;
-  text-shadow:
-    var(--_text-shadow-a),
-    var(--_text-shadow-a),
-    var(--_text-shadow-a),
-    var(--_text-shadow-a);
   opacity: 1;
   transition: opacity var(--transition-a);
-  align-self: flex-end;
   line-height: 1.2;
 
   & > span {
+    min-width: 40%;
     display: block;
     width: fit-content;
     background-color: var(--_color-a);
     padding: 1rem;
-    border-radius: 0 .5em 0 .5em;
+    border-radius: 0 1rem 0 1rem;
     text-shadow: none;
     color: var(--_color-b);
+    line-height: 1.5;;
 
     &:first-of-type {
       align-self: flex-start;
-      /* border-top-left-radius: .5em; */
+      border-top-left-radius: 1rem;
       margin-bottom: -1rem;
     }
 
     &:last-of-type {
       margin-top: -1rem;
       margin-bottom: .5lh;
-      /* border-bottom-right-radius: .5em; */
+      border-bottom-right-radius: 1rem;
       align-self: flex-end;
     }
   }
@@ -137,15 +140,18 @@ p {
 }
 
 .hero__subtitle {
-  max-width: 80ch;
+  width: var(--width-a);
   margin-top: auto;
-  padding: 1em;
+  padding: 1rem max(1rem, 5%);
   background-color: var(--_color-a);
-  border-radius: 1em 1em 0 0;
+  border-radius: 1rem 1rem 0 0;
   color: var(--_color-b);
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
 }
 
-.hero__subtitle::after {
+/* .hero__subtitle::after {
   content: '';
   display: block;
   width: 1em;
@@ -156,7 +162,7 @@ p {
   border-bottom: none;
   rotate: 135deg;
   animation: jumpInfinite 2s infinite;
-}
+} */
 
 /* .logo {
   width: 5rem;

@@ -19,6 +19,11 @@
 
 <body>
   <ez-header hidden>
+    <a slot="logo" href="/en/index.html" class="logo">
+      <svg slot="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
+        <use href="../../src/svg/vegan-challenge-logo.svg"></use>
+      </svg>
+    </a>
       <li>
         <a href="../index.html#signup" class="nav-link hover-opacity">sign up</a>
       </li>
@@ -52,58 +57,317 @@
       <h1>weekly meal plan</h1>
       <div class="accordion">
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">monday</summary>
-          <ul>
-            <li>200GB RAM</li>
-            <li>4PB storage</li>
+          <summary class="accordion__summary">Monday: Georgian Love</summary>
+          <ul class="card-list accordion__content">
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Lobio (Red Bean Stew) with Mchadi</h3>
+                <span class="card__subtitle">calories: ~650 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Lobio (Red Bean Stew) with Mchadi</h3>
+                <dl>
+                  <dt>Ingredients</dt>
+                  <dd>red kidney beans (150 g dry)</dd>
+                  <dd>onion</dd>
+                  <dd>garlic (2 cloves)</dd>
+                  <dd>cilantro</dd>
+                  <dd>celery</dd>
+                  <dd>dried savory (kondari)</dd>
+                  <dd>vinegar</dd>
+                  <dd>salt</dd>
+                  <dd>pepper</dd>
+                  <dd>corn flour for mchadi</dd>
+                  <dt>Key Info</dt>
+                  <dd>High in plant protein, iron, and fiber</dd>
+                </dl>
+                <span class="card__subtitle">calories: ~650 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Spinach Pkhali and Tomato Salad</h3>
+                <span class="card__subtitle">calories: ~280 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Spinach Pkhali and Tomato Salad</h3>
+                <span class="card__subtitle">calories: ~280 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Fruit Assortment</h3>
+                <span class="card__subtitle">calories: ~100 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Fruit Assortment</h3>
+                <span class="card__subtitle">calories: ~100 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
 
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">tuesday</summary>
-          <ul>
-            <li>Extreme mode: on</li>
-            <li>Raytracing: enabled</li>
+          <summary class="accordion__summary">Tuesday: Indian Flavors</summary>
+          <ul class="card-list accordion__content">
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Dal Fry (Yellow Lentil Curry) with Rice</h3>
+                <span class="card__subtitle">calories: ~600 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Dal Fry (Yellow Lentil Curry) with Rice</h3>
+                <span class="card__subtitle">calories: ~600 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Aloo Gobi (Cauliflower & Potato Curry)</h3>
+                <span class="card__subtitle">calories: ~350 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Aloo Gobi (Cauliflower & Potato Curry)</h3>
+                <span class="card__subtitle">calories: ~350 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Local Fruit Jam on Lavash</h3>
+                <span class="card__subtitle">calories: ~120 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Local Fruit Jam on Lavash</h3>
+                <span class="card__subtitle">calories: ~120 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
 
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">wednesday</summary>
-          <ul>
-            <li>Material: Faux Leather, Metal</li>
-            <li>Item Weight: 10.2Kg</li>
+          <summary class="accordion__summary">Wednesday: Latin American Vibes</summary>
+          <ul class="card-list accordion__content">
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Vegan Chili Sin Carne</h3>
+                <span class="card__subtitle">calories: ~580 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Vegan Chili Sin Carne</h3>
+                <span class="card__subtitle">calories: ~580 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Avocado Toast</h3>
+                <span class="card__subtitle">calories: ~250 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Avocado Toast</h3>
+                <span class="card__subtitle">calories: ~250 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Mixed Nuts (Walnuts, Almonds)</h3>
+                <span class="card__subtitle">calories: ~180 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Mixed Nuts (Walnuts, Almonds)</h3>
+                <span class="card__subtitle">calories: ~180 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
 
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">thursday</summary>
-          <ul>
-            <li>Material: Faux Leather, Metal</li>
-            <li>Item Weight: 10.2Kg</li>
+          <summary class="accordion__summary">Thursday: Simple European</summary>
+          <ul class="card-list accordion__content">
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Pasta with Mushroom & Tomato Sauce</h3>
+                <span class="card__subtitle">calories: ~600 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Pasta with Mushroom & Tomato Sauce</h3>
+                <dl>
+                  <dt>Ingredients</dt>
+                  <dd>pasta (100g dry)</dd>
+                  <dd>fresh local mushrooms (150g)</dd>
+                  <dd>onions</dd>
+                  <dd>garlic</dd>
+                  <dd>fresh tomatoes or tomato paste</dd>
+                  <dd>fresh basil</dd>
+                  <dt>Key Info</dt>
+                  <dd>Carbohydrates for sustained energy</dd>
+                  <dd>B vitamins from mushrooms</dd>
+                </dl>
+                <span class="card__subtitle">calories: ~600 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Homemade Hummus and Veggie Sticks</h3>
+                <span class="card__subtitle">calories: ~220 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Homemade Hummus and Veggie Sticks</h3>
+                <span class="card__subtitle">calories: ~220 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Oatmeal Cookies (Homemade Vegan)</h3>
+                <span class="card__subtitle">calories: ~150 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Oatmeal Cookies (Homemade Vegan)</h3>
+                <span class="card__subtitle">calories: ~150 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
 
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">friday</summary>
-          <ul>
-            <li>Material: Faux Leather, Metal</li>
-            <li>Item Weight: 10.2Kg</li>
+          <summary class="accordion__summary">Friday: Asian Fantasy</summary>
+          <ul class="card-list accordion__content">
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Tofu & Vegetable Stir‑Fry with Noodles</h3>
+                <span class="card__subtitle">calories: ~650 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Tofu & Vegetable Stir‑Fry with Noodles</h3>
+                <span class="card__subtitle">calories: ~650 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Simple Miso Soup</h3>
+                <span class="card__subtitle">calories: ~100 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Simple Miso Soup</h3>
+                <span class="card__subtitle">calories: ~100 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Coconut Rice Porridge</h3>
+                <span class="card__subtitle">calories: ~200 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Coconut Rice Porridge</h3>
+                <span class="card__subtitle">calories: ~200 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
 
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">saturday</summary>
-          <ul>
-            <li>Material: Faux Leather, Metal</li>
-            <li>Item Weight: 10.2Kg</li>
+          <summary class="accordion__summary">Saturday: Weekend Relax</summary>
+          <ul class="card-list accordion__content">
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Vegan Pizza</h3>
+                <span class="card__subtitle">calories: ~700 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Vegan Pizza</h3>
+                <span class="card__subtitle">calories: ~700 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Roasted Local Chickpeas (Crispy Snack)</h3>
+                <span class="card__subtitle">calories: ~180 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Roasted Local Chickpeas (Crispy Snack)</h3>
+                <span class="card__subtitle">calories: ~180 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Homemade Berry Crumble (Vegan)</h3>
+                <span class="card__subtitle">calories: ~250 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Homemade Berry Crumble (Vegan)</h3>
+                <span class="card__subtitle">calories: ~250 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
 
         <details class="accordion__details" name="week">
-          <summary class="accordion__summary">sunday</summary>
-          <ul>
-            <li>Material: Faux Leather, Metal</li>
-            <li>Item Weight: 10.2Kg</li>
+          <summary class="accordion__summary">Sunday: Wrap Up the Week</summary>
+          <ul class="card-list accordion__content">
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">main meal</span>
+                <h3 class="card__title">Falafel Wraps</h3>
+                <span class="card__subtitle">calories: ~600 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Falafel Wraps</h3>
+                <span class="card__subtitle">calories: ~600 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">snack/soup</span>
+                <h3 class="card__title">Green Smoothie</h3>
+                <span class="card__subtitle">calories: ~150 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Green Smoothie</h3>
+                <span class="card__subtitle">calories: ~150 kcal</span>
+              </div>
+            </ez-dialog>
+
+            <ez-dialog hidden>
+              <li class="card card_type_recipe" slot="button">
+                <span class="card__subtitle">dessert</span>
+                <h3 class="card__title">Mixed Dried Fruits</h3>
+                <span class="card__subtitle">calories: ~100 kcal</span>
+              </li>
+              <div class="card card_type_recipe" slot="content">
+                <h3 class="card__title">Mixed Dried Fruits</h3>
+                <span class="card__subtitle">calories: ~100 kcal</span>
+              </div>
+            </ez-dialog>
           </ul>
         </details>
       </div>

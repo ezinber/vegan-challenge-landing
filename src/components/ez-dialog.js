@@ -1,6 +1,6 @@
 const template = document.createElement('template');
 
-template.innerHTML = `
+template.innerHTML = /*html*/`
   <style>
     :host {
       --_gap: var(--gap, 1.5em);
@@ -18,6 +18,8 @@ template.innerHTML = `
 
     ::slotted([slot='button']) {
       height: 100%;
+      width: 100%;
+      display: none;
     }
 
     button {
@@ -34,6 +36,15 @@ template.innerHTML = `
       color: inherit;
       font-family: inherit;
       line-height: inherit;
+    }
+
+    button[type="button"] {
+      transform: translateY(0);
+      transition: transform var(--_transition);
+
+      &:hover {
+        transform: translateY(-.5rem);
+      }
     }
 
     button[type="submit"] {

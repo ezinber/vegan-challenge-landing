@@ -135,14 +135,13 @@ template.innerHTML = /*html*/`
         bottom: 0;
 
         &:has(a[slot="logo"]) {
-          border-radius: 1em;
-          padding: 2.5rem .5em .5em;
+          border-radius: 1rem;
         }
       }
 
       ::slotted(a[slot="logo"]) {
         position: absolute;
-        top: -5rem;
+        top: -6rem;
         left: calc(50% - 2.5rem);
       }
 
@@ -153,6 +152,10 @@ template.innerHTML = /*html*/`
         width: fit-content;
         height: fit-content;
         padding: 1em 1em 3em;
+
+        &:has(a[slot="logo"]) {
+          padding: 3.5rem .5em .5em;
+        }
       }
 
       nav {
