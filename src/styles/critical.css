@@ -2,6 +2,9 @@
   --color-a: 240, 255, 214;
   --color-b: 38, 87, 47;
   --color-accent-a: 40, 190, 90;
+  --padding-a: 1rem;
+  --padding-b: max(5%, var(--padding-a));
+  --padding-c: 1lh;
   --opacity-a: .8;
   --opacity-b: .6;
   --opacity-c: .4;
@@ -73,7 +76,8 @@ ul {
   --_color-a: rgb(var(--color-a));
   --_color-b: rgb(var(--color-b));
   --_linear-gradient: linear-gradient(rgba(var(--color-b), var(--opacity-c)));
-  --_padding-a: var(--padding-a, 1em);
+  --_padding-a: var(--padding-a, 1rem);
+  --_padding-b: var(--padding-b, 1rem);
   --_width-a: var(--width-a, 100%);
 
   width: 100%;
@@ -142,9 +146,9 @@ ul {
 .hero__subtitle {
   width: var(--width-a);
   margin-top: auto;
-  padding: 1rem max(1rem, 5%);
+  padding: var(--_padding-a) var(--_padding-b);
   background-color: var(--_color-a);
-  border-radius: 1rem 1rem 0 0;
+  border-radius: var(--_padding-a) var(--_padding-a) 0 0;
   color: var(--_color-b);
   font-size: 1.5em;
   font-weight: 700;

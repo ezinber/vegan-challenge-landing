@@ -94,6 +94,29 @@ p
   padding-left: 1ch;
 }
 
+.definition-list {
+  list-style: disc;
+
+  & > dt {
+    font-weight: 700;
+
+    &:not(:first-of-type) {
+      margin-top: var(--_padding-c, 1lh);
+    }
+  }
+
+  & > dd {
+    display: list-item;
+  }
+}
+
+.unordered-list {
+  display: flex;
+  padding-left: 1.25rem;
+  gap: var(--padding-a, 1rem);
+  flex-direction: column;
+}
+
 .section {
   --_padding-a: var(--padding-a, 1em);
   --_vertical-padding: 25vh;
@@ -286,12 +309,13 @@ p
 .footer {
   --_color-a: rgb(var(--color-a));
   --_color-b: rgb(var(--color-b));
+  --_padding-b: var(--padding-b, 1rem);
   --_shadow-color: rgba(var(--color-b), var(--opacity-c));
   --_transition-a: var(--transition-a);
   --_opacity-a: var(--opacity-b);
   --_box-shadow-offset: var(--shadow-offset-a);
 
-  padding: 1rem;
+  padding: var(--_padding-b);
   min-height: fit-content;
   color: var(--_color-b);
   background-color: var(--_color-a);
@@ -401,12 +425,41 @@ p
 .card-list {
   width: 100%;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   justify-content: space-around;
   gap: 4em 2em;
   position: relative;
   list-style: none;
+
+  & > li {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.card-list_type_recipes {
+  --_color-a: rgb(var(--color-a, #fff));
+  --_color-b: rgb(var(--color-b, #000));
+  gap: 1rem;
+
+  & .card {
+    max-width: unset;
+    padding: 1rem;
+    background-color: var(--_color-a);
+    color: var(--_color-b);
+    border-radius: 1rem;
+
+    & .card__subtitle {
+      line-height: 1;
+      align-self: flex-start;
+
+      &:last-of-type {
+        margin-top: auto;
+        align-self: flex-end;
+      }
+    }
+  }
 }
 
 .card {
@@ -432,7 +485,8 @@ p
   } */
 }
 
-.card_type_recipe {
+/* .card_type_recipe {
+  max-width: unset;
   padding: 1rem;
   background-color: var(--_color-a);
   color: var(--_color-b);
@@ -459,7 +513,7 @@ p
       display: list-item;
     }
   }
-}
+} */
 
 .card_type_member {
   & .card__image {
@@ -713,6 +767,7 @@ p
 
 .accordion {
   --_max-width: 50rem;
+  --_padding-a: var(--padding-a, 1rem);
 
   width: 100%;
   max-width: var(--_max-width);
@@ -727,8 +782,11 @@ p
 }
 
 .accordion__summary {
-  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--_padding-a);
   cursor: pointer;
+  font-weight: 700;
 }
 
 .accordion__content {
@@ -742,7 +800,7 @@ p
     padding-left: 1ch;
   }
 
-  & > ul {
+  /* & > ul {
     display: flex;
     flex-direction: column;
     gap: 1lh;
@@ -750,7 +808,7 @@ p
     & span {
       font-weight: 800;
     }
-  }
+  } */
 }
 
 /* .card-list {
@@ -787,10 +845,25 @@ p
 .popup {
   --_color-a: rgb(var(--color-a, 255, 255, 255));
   --_color-b: rgb(var(--color-b, 0, 0, 0));
+  --_padding-a: var(--padding-a, 1rem);
+  --_padding-b: var(--padding-b, 1rem);
+  --_padding-c: var(--padding-c, 1lh);
 
   max-width: 50rem;
-  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  padding: var(--_padding-b);
   color: var(--_color-b);
   background-color: var(--_color-a);
-  border-radius: 1em;
+  border-radius: var(--_padding-a);
+}
+
+.popup__title {
+  margin-bottom: var(--_padding-a);
+}
+
+.popup__caption {
+  margin-top: var(--_padding-c);
+  align-self: flex-end;
+  font-style: italic;
 }

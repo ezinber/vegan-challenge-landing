@@ -11,7 +11,8 @@ template.innerHTML = /*html*/`
       --_close-button-color: rgb(var(--color-a, 255, 255, 255));
       --_backdrop-color: rgba(var(--color-b, 0 0 0), var(--opacity-a, .8));
 
-      display: block;
+      display: contents;
+      width: fit-content;
       height: 100%;
       font-size: inherit;
     }
@@ -25,8 +26,6 @@ template.innerHTML = /*html*/`
     button {
       box-sizing: border-box;
       padding: 0;
-      width: 100%;
-      height: 100%;
       background: none;
       border: none;
       font-size: inherit;
