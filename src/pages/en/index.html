@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preload" href="/src/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="image" href="/src/images/hero.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="description of the webpage" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://challenge.vgn.ge/en" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="vegan challenge" />
+  <meta property="og:title" content="Ecolution: Vegan Challenge" />
+  <meta property="og:description" content="Georgia's first large-scale initiative, offering a 30-day vegan challenge." />
+  <meta property="og:image" content="https://challenge.vgn.ge/og.webp" />
+  <title>Ecolution: Vegan Challenge</title>
+  <script type="module" src="/src/scripts/index.js"></script>
+</head>
+
+<body>
+  <ez-header data-active-class="nav-link_active" hidden>
+      <a slot="logo" href="/en/index.html" class="logo">
+        <svg slot="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
+          <use href="../src/svg/vegan-challenge-logo.svg"></use>
+        </svg>
+      </a>
+      <li>
+        <a href="#signup" class="nav-link hover-opacity">sign up</a>
+      </li>
+      <li>
+        <a href="#why" class="nav-link hover-opacity">why</a>
+      </li>
+      <li>
+        <a href="#how" class="nav-link nav-link_with-menu hover-opacity">how</a>
+        <ul>
+          <li>
+            <a href="./meal-plan/index.html" class="nav-link hover-opacity">meal plan</a>
+          </li>
+          <li>
+            <a href="./dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#faq" class="nav-link hover-opacity">faq</a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link hover-opacity">about us</a>
+      </li>
+      <li>
+        <a href="../" class="nav-link hover-opacity">ქა</a>
+      </li>
+  </ez-header>
+
+  <main>
+      <section class="hero">
+        <h1 class="hero__title">
+          <span>Better&nbsp;Food</span>
+          <span>Better&nbsp;Health</span>
+          <span>Better&nbsp;Planet</span>
+        </h1>
+        <p class="hero__subtitle">Take the 30-Day challenge</p>
+      </section>
+
+      <section id="signup" class="section section_name_signup">
+        <div class="section__container">
+          <p><strong>Discover a New You!</strong> Are you ready to embark on a transformative journey that not only benefits your health but also makes a lasting impact on the planet?</p>
+          <p> Welcome to <strong>Ecolution: Vegan Challenge</strong> — Georgia's first large-scale initiative inviting you to explore the incredible advantages of a plant-based lifestyle over 30 enlightening days.</p>
+          <form action="post" class="form">
+            <button id="survey-button" class="form__submit-button hover-opacity" type="button">join the challenge!</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="why" class="section section_name_why">
+        <h2 class="section__title">why try vegan?</h2>
+        <ul class="section__list">
+          <li>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="../src/images/piglet.webp" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">For the Animals</h3>
+                <p class="card__subtitle">Compassion in Action</p>
+                <p class="card__description">This choice is a powerful stand for kindness. It aligns your daily actions with the value of compassion for all living beings. By exploring veganism, you are directly reducing demand for systems that cause animal suffering, choosing instead a lifestyle that celebrates life and freedom for all creatures.<span class="card__more-bar">...more</span></p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent">This choice is a powerful stand for kindness. It aligns your daily actions with the value of compassion for all living beings. By exploring veganism, you are directly reducing demand for systems that cause animal suffering, choosing instead a lifestyle that celebrates life and freedom for all creatures.</p>
+              </div>
+            </ez-dialog>
+          </li>
+          <li>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="../src/images/environment.webp" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">For the Environment</h3>
+                <p class="card__subtitle">A Lighter Footprint</p>
+                <p class="card__description">Your plate is one of the simplest and most effective tools for environmental change. A plant-based diet significantly reduces your carbon footprint, conserves precious water resources, and helps protect biodiversity. By choosing plants, you're voting for a more sustainable and kind world, ensuring our beautiful planet thrives for generations to come.<span class="card__more-bar">...more</span></p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent">Your plate is one of the simplest and most effective tools for environmental change. A plant-based diet significantly reduces your carbon footprint, conserves precious water resources, and helps protect biodiversity. By choosing plants, you're voting for a more sustainable and kind world, ensuring our beautiful planet thrives for generations to come.</p>
+              </div>
+            </ez-dialog>
+          </li>
+          <li>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="../src/images/health.webp" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">For Your Health</h3>
+                <p class="card__subtitle">Feel Vibrant & Energized</p>
+                <p class="card__description">Choosing a plant-based diet is a powerful gift to your body. It's a chance to nourish yourself with foods rich in vitamins, fiber and antioxidants. Many people who take the challenge report feeling more energetic, experiencing better digestion and discovering a new relationship with food that focuses on nourishment and vitality. It’s not about restriction; it’s about fueling your body with the very best nature has to offer.<span class="card__more-bar">...more</span></p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent">Choosing a plant-based diet is a powerful gift to your body. It's a chance to nourish yourself with foods rich in vitamins, fiber and antioxidants. Many people who take the challenge report feeling more energetic, experiencing better digestion and discovering a new relationship with food that focuses on nourishment and vitality. It’s not about restriction; it’s about fueling your body with the very best nature has to offer.</p>
+              </div>
+            </ez-dialog>
+          </li>
+          <li>
+            <ez-dialog hidden>
+              <article class="card" slot="button">
+                <img src="../src/images/food.webp" alt="" class="card__image" loading="lazy">
+                <h3 class="card__title">For Culinary Adventure</h3>
+                <p class="card__subtitle">Discover a World of Taste</p>
+                <p class="card__description">Get ready to explode your taste buds! Vegan cuisine is far from boring; it's a fascinating exploration of global flavors, innovative recipes, and delicious, wholesome ingredients. This is your passport to discovering new favorite dishes, experimenting with spices, and falling in love with food all over again. It’s a creative and joyful culinary journey.<span class="card__more-bar">...more</span></p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent">Get ready to explode your taste buds! Vegan cuisine is far from boring; it's a fascinating exploration of global flavors, innovative recipes, and delicious, wholesome ingredients. This is your passport to discovering new favorite dishes, experimenting with spices, and falling in love with food all over again. It’s a creative and joyful culinary journey.</p>
+              </div>
+            </ez-dialog>
+          </li>
+        </ul>
+      </section>
+
+      <section id="how" class="section section_name_how">
+        <h2 class="section__title">how does it work?</h2>
+        <div class="content-block">
+          <img
+            src="../src/images/how-does-it-work.webp"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <ul class="content-block__text section__list">
+            <li>Sign up with <a href="#signup">this</a> short form</li>
+            <li>Join a special Challenge Facebook group (click on “Join Group”)</li>
+            <li>Every day, you’ll get recipes, tips, and loads of inspiration!</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="faq" class="section section_name_faq">
+        <h2>Have questions?</h2>
+        <div class="accordion">
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">How Long Will the Journey Last?</summary>
+            <div class="accordion__content">
+              <p>The Ecolution Challenge begins on December 1 and runs through December 30. For those ready to dive even deeper, we offer a 42-day marathon that extends until January 11. This extended program provides you with even more insights, resources, and opportunities for personal growth. At the end of your journey, recipients of our challenge will be honored with a symbolic medal and a certificate, recognizing your commitment to positive change.</p>
+            </div>
+          </details>
+
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">What is the Cost of Participation?</summary>
+            <div class="accordion__content">
+              <p>Participation is absolutely free! All we ask is that you bring your enthusiasm, a willingness to learn, and a commitment to embracing a more ethical lifestyle. Ecolution seeks to make veganism accessible to everyone—no matter your background or financial situation. We believe that good food should be accessible to all.</p>
+            </div>
+          </details>
+
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">What Will I Experience?</summary>
+            <div class="accordion__content">
+              <ul class="unordered-list">
+                <li><span>Nutritional Mastery:</span> Gain insights into essential nutrients and how to design meals that nourish your body.</li>
+                <li><span>Creative Meal Planning:</span> Discover strategies to effortlessly plan your meals and streamline your grocery shopping.</li>
+                <li><span>Culinary Skills:</span> Participate in interactive cooking demonstrations that will empower you to prepare vibrant and delicious plant-based meals.</li>
+                <li><span>Mentorship:</span> Connect with experienced volunteers who will guide you every step of the way, answering your questions and providing motivation.</li>
+                <li><span>Online Resources:</span> Access a treasure trove of recipes, articles, and videos designed to make your transition seamless and enjoyable.</li>
+                <li><span>Community Connection:</span> Participate in forums where you can share triumphs, seek advice, and inspire one another throughout the challenge.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">What Does “Veganism” Mean?</summary>
+            <div class="accordion__content">
+              <p>During the challenge, participants will try to live a vegan lifestyle, which means excluding all kinds of meat, dairy products, eggs, and honey from the diet; and refusing to use any products obtained through the exploitation of animals. If you’re wondering why the above products are not considered vegan and how to uphold a moral‑ethical minimum in everyday life, we will answer these questions in detail during the challenge. In the meantime, you can visit Wikipedia (https://en.wikipedia.org/wiki/Veganism) or talk to an artificial intelligence.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="team" class="section section_name_team">
+        <h2>Our team</h2>
+        <ul class="card-list">
+          <li>
+            <ez-dialog hidden>
+              <article class="card card_type_member" slot="button">
+                <img class="card__image" src="../src/images/piglet.webp" alt="">
+                <h3 class="card__title">Nini Turiashvili</h3>
+                <p class="card__subtitle">Project Manager</p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, quae vero magni mollitia ullam consequatur repellendus accusantium, nesciunt reiciendis earum vel numquam? Veritatis distinctio mollitia ad excepturi, ratione quas a?</p>
+              </div>
+            </ez-dialog>
+          </li>
+          <li>
+            <ez-dialog hidden>
+              <article class="card card_type_member" slot="button">
+                <img class="card__image" src="../src/images/piglet.webp" alt="">
+                <h3 class="card__title">Oleg Ozerov</h3>
+                <p class="card__subtitle">Project Manager</p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent" >Oleg Ozerov, who holds the position of Vice President in Vegan Georgia, has been involved in animal rights scene for almost two decades. He has organised a huge number of vegan events, including conferences, summits, festivals, demonstrations, marches, campaigns, exhibitions, film screenings, and other projects. Former co-founder of Kiwi Vegan Cafe in Tbilisi, he was also actively involved in animal rights activities in Russia, Armenia, Israel, Belarus and Spain. He has also always been closely engaged in publishing animal welfare literature and has translated more than twenty themed books and a few movies. In addition to his work in Vegan Georgia, he also holds the position of General Secretary and Treasurer in Compassion Over Borders.</p>
+              </div>
+            </ez-dialog>
+          </li>
+          <li>
+            <ez-dialog hidden>
+              <article class="card card_type_member" slot="button">
+                <img class="card__image" src="../src/images/piglet.webp" alt="">
+                <h3 class="card__title">Mikelo Ezinber</h3>
+                <p class="card__subtitle">IT Specialist</p>
+              </article>
+              <div class="popup" slot="content">
+                <p class="first-letter-accent" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, quae vero magni mollitia ullam consequatur repellendus accusantium, nesciunt reiciendis earum vel numquam? Veritatis distinctio mollitia ad excepturi, ratione quas a?</p>
+              </div>
+            </ez-dialog>
+          </li>
+        </ul>
+      </section>
+
+      <!-- <section id="about" class="section section_name_about">
+        <h2 class="section__title">about us</h2>
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>Vegan Georgia is a non-commercial legal entity founded in 2015. We are the first and currently the only official vegan organization in Georgia, dedicated to protecting the rights of every animal.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>Our goal is to strengthen compassion and justice in Georgia and beyond — within social, cultural, and political spaces — by promoting an alternative perspective on the relationship between humans and non-human animals.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>To achieve this goal, we use diverse tools and approaches that cover social, economic, and political aspects, aiming at long-term and sustainable change. We believe that violence against animals is a serious problem that, beyond individual actions, requires systemic and complex responses.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>The main mission of Vegan Georgia is based on defending animal rights and fighting against their exploitation. We strongly believe in the idea of universal freedom and justice, condemn all forms of animal oppression, and fight for the liberation of living beings.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>At the same time, we acknowledge the strong connection between animal freedom, environmental protection, and human rights.
+              We promote plant-based nutrition as the most beneficial choice for health, the planet, and moral hygiene.</p>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <img
+            src="https://picsum.photos/300/200"
+            class="content-block__image"
+            alt=""
+            loading="lazy"
+          >
+          <div class="content-block__text">
+            <p>For us, every life is valuable and deserves equal respect, regardless of species. That is why we are building a world where compassion and equality are the core values for creating a just and harmonious future.</p>
+          </div>
+        </div>
+      </section> -->
+  </main>
+  <footer class="section footer">
+    <a href="https://vegangeorgia.org" target="_blank" class="footer__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 975.9 372.3">
+        <use href="../src/svg/vg-logo.svg">
+      </svg>
+    </a>
+    <ul class="footer__social-list">
+      <li>
+        <a
+          href="mailto:info@vegangeorgia.org"
+          target="_blank"
+          aria-label="send us an email"
+          class="footer__social-link hover-opacity"
+          title="email: info@vegangeorgia.org"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <use href="../src/svg/social-icons.svg#email"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/vgn.georgia/"
+          target="_blank"
+          aria-label="Visit our Instagram"
+          class="footer__social-link hover-opacity"
+          title="instagram: @vgn.georgia"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <use href="../src/svg/social-icons.svg#instagram">
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.facebook.com/vegangeorgia.org/"
+          target="_blank"
+          aria-label="Visit our Facebook"
+          class="footer__social-link hover-opacity"
+          title="facebook: @vegangeorgia.org"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <use href="../src/svg/social-icons.svg#facebook">
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <p class="footer__copyright">Ⓒ Vegan Challenge</p>
+  </footer>
+</body>
+
+</html>
