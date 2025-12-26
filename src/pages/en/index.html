@@ -23,7 +23,7 @@
   <ez-header data-active-class="nav-link_active" hidden>
       <a slot="logo" href="/en/index.html" class="logo">
         <svg slot="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
-          <use href="../src/svg/vegan-challenge-logo.svg"></use>
+          <use href="/src/svg/vegan-challenge-logo.svg"></use>
         </svg>
       </a>
       <li>
@@ -36,10 +36,10 @@
         <a href="#how" class="nav-link nav-link_with-menu hover-opacity">how</a>
         <ul>
           <li>
-            <a href="./meal-plan/index.html" class="nav-link hover-opacity">meal plan</a>
+            <a href="%VITE_BASE_URL%/en/meal-plan/index.html" class="nav-link hover-opacity">meal plan</a>
           </li>
           <li>
-            <a href="./dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
+            <a href="%VITE_BASE_URL%/en/dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
           </li>
         </ul>
       </li>
@@ -47,10 +47,10 @@
         <a href="#faq" class="nav-link hover-opacity">faq</a>
       </li>
       <li>
-        <a href="#about" class="nav-link hover-opacity">about us</a>
+        <a href="#team" class="nav-link hover-opacity">team</a>
       </li>
       <li>
-        <a href="../" class="nav-link hover-opacity">ქა</a>
+        <a href="%VITE_BASE_URL%/index.html" class="nav-link hover-opacity">ქა</a>
       </li>
   </ez-header>
 
@@ -80,7 +80,7 @@
           <li>
             <ez-dialog hidden>
               <article class="card" slot="button">
-                <img src="../src/images/piglet.webp" alt="" class="card__image" loading="lazy">
+                <img src="/src/images/piglet.webp" alt="" class="card__image" loading="lazy">
                 <h3 class="card__title">For the Animals</h3>
                 <p class="card__subtitle">Compassion in Action</p>
                 <p class="card__description">This choice is a powerful stand for kindness. It aligns your daily actions with the value of compassion for all living beings. By exploring veganism, you are directly reducing demand for systems that cause animal suffering, choosing instead a lifestyle that celebrates life and freedom for all creatures.<span class="card__more-bar">...more</span></p>
@@ -93,7 +93,7 @@
           <li>
             <ez-dialog hidden>
               <article class="card" slot="button">
-                <img src="../src/images/environment.webp" alt="" class="card__image" loading="lazy">
+                <img src="/src/images/environment.webp" alt="" class="card__image" loading="lazy">
                 <h3 class="card__title">For the Environment</h3>
                 <p class="card__subtitle">A Lighter Footprint</p>
                 <p class="card__description">Your plate is one of the simplest and most effective tools for environmental change. A plant-based diet significantly reduces your carbon footprint, conserves precious water resources, and helps protect biodiversity. By choosing plants, you're voting for a more sustainable and kind world, ensuring our beautiful planet thrives for generations to come.<span class="card__more-bar">...more</span></p>
@@ -106,7 +106,7 @@
           <li>
             <ez-dialog hidden>
               <article class="card" slot="button">
-                <img src="../src/images/health.webp" alt="" class="card__image" loading="lazy">
+                <img src="/src/images/health.webp" alt="" class="card__image" loading="lazy">
                 <h3 class="card__title">For Your Health</h3>
                 <p class="card__subtitle">Feel Vibrant & Energized</p>
                 <p class="card__description">Choosing a plant-based diet is a powerful gift to your body. It's a chance to nourish yourself with foods rich in vitamins, fiber and antioxidants. Many people who take the challenge report feeling more energetic, experiencing better digestion and discovering a new relationship with food that focuses on nourishment and vitality. It’s not about restriction; it’s about fueling your body with the very best nature has to offer.<span class="card__more-bar">...more</span></p>
@@ -119,7 +119,7 @@
           <li>
             <ez-dialog hidden>
               <article class="card" slot="button">
-                <img src="../src/images/food.webp" alt="" class="card__image" loading="lazy">
+                <img src="/src/images/food.webp" alt="" class="card__image" loading="lazy">
                 <h3 class="card__title">For Culinary Adventure</h3>
                 <p class="card__subtitle">Discover a World of Taste</p>
                 <p class="card__description">Get ready to explode your taste buds! Vegan cuisine is far from boring; it's a fascinating exploration of global flavors, innovative recipes, and delicious, wholesome ingredients. This is your passport to discovering new favorite dishes, experimenting with spices, and falling in love with food all over again. It’s a creative and joyful culinary journey.<span class="card__more-bar">...more</span></p>
@@ -136,7 +136,7 @@
         <h2 class="section__title">how does it work?</h2>
         <div class="content-block">
           <img
-            src="../src/images/how-does-it-work.webp"
+            src="/src/images/how-does-it-work.webp"
             class="content-block__image"
             alt=""
             loading="lazy"
@@ -195,19 +195,21 @@
           <li>
             <ez-dialog hidden>
               <article class="card card_type_member" slot="button">
-                <img class="card__image" src="../src/images/piglet.webp" alt="">
+                <img class="card__image" src="/src/images/nini.webp" alt="">
                 <h3 class="card__title">Nini Turiashvili</h3>
                 <p class="card__subtitle">Project Manager</p>
               </article>
               <div class="popup" slot="content">
-                <p class="first-letter-accent" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, quae vero magni mollitia ullam consequatur repellendus accusantium, nesciunt reiciendis earum vel numquam? Veritatis distinctio mollitia ad excepturi, ratione quas a?</p>
+                <p class="first-letter-accent">Nini Turiashvili serves as the president of Vegan Georgia, bringing over a decade of experience in the animal rights movement, where she has been part of organizing activities, legislative efforts, and educational initiatives. She has represented the organization at numerous international animal rights events.</p>
+                <p class="first-letter-accent">She is a master of criminal law by education, an artist by passion, and a fighter for animal liberation by destiny. A civil rights activist, she works to explore the connections between human and animal rights, advocating for oppressed groups and minorities.</p>
+                <p class="first-letter-accent">Nini's vision is to strengthen both the organization and the animal rights movement in Georgia and beyond. She is driven by the belief that no one is truly free unless we all are, dedicating her life to the highest ideal: fighting for freedom and justice for all.</p>
               </div>
             </ez-dialog>
           </li>
           <li>
             <ez-dialog hidden>
               <article class="card card_type_member" slot="button">
-                <img class="card__image" src="../src/images/piglet.webp" alt="">
+                <img class="card__image" src="/src/images/oleg.webp" alt="">
                 <h3 class="card__title">Oleg Ozerov</h3>
                 <p class="card__subtitle">Project Manager</p>
               </article>
@@ -219,12 +221,12 @@
           <li>
             <ez-dialog hidden>
               <article class="card card_type_member" slot="button">
-                <img class="card__image" src="../src/images/piglet.webp" alt="">
+                <img class="card__image" src="/src/images/ez.webp" alt="">
                 <h3 class="card__title">Mikelo Ezinber</h3>
                 <p class="card__subtitle">IT Specialist</p>
               </article>
               <div class="popup" slot="content">
-                <p class="first-letter-accent" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, quae vero magni mollitia ullam consequatur repellendus accusantium, nesciunt reiciendis earum vel numquam? Veritatis distinctio mollitia ad excepturi, ratione quas a?</p>
+                <p class="first-letter-accent" >***classified***</p>
               </div>
             </ez-dialog>
           </li>
@@ -310,7 +312,7 @@
   <footer class="section footer">
     <a href="https://vegangeorgia.org" target="_blank" class="footer__logo">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 975.9 372.3">
-        <use href="../src/svg/vg-logo.svg">
+        <use href="/src/svg/vg-logo.svg">
       </svg>
     </a>
     <ul class="footer__social-list">
@@ -323,7 +325,7 @@
           title="email: info@vegangeorgia.org"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <use href="../src/svg/social-icons.svg#email"></use>
+            <use href="/src/svg/social-icons.svg#email"></use>
           </svg>
         </a>
       </li>
@@ -336,7 +338,7 @@
           title="instagram: @vgn.georgia"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <use href="../src/svg/social-icons.svg#instagram">
+            <use href="/src/svg/social-icons.svg#instagram">
           </svg>
         </a>
       </li>
@@ -349,7 +351,7 @@
           title="facebook: @vegangeorgia.org"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <use href="../src/svg/social-icons.svg#facebook">
+            <use href="/src/svg/social-icons.svg#facebook">
           </svg>
         </a>
       </li>

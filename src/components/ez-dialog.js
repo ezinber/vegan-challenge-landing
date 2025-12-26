@@ -23,6 +23,12 @@ template.innerHTML = /*html*/`
       display: none;
     }
 
+    ::slotted([slot='content']) {
+      max-height: 80vw;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
     button {
       box-sizing: border-box;
       padding: 0;
@@ -85,6 +91,7 @@ template.innerHTML = /*html*/`
 
     dialog {
       padding: 0;
+      flex-direction: column;
       border: none;
       background: none;
       opacity: 0;
@@ -92,7 +99,7 @@ template.innerHTML = /*html*/`
         opacity var(--_transition),
         overlay var(--_transition) allow-discrete,
         display var(--_transition) allow-discrete;
-      }
+    }
 
     dialog::backdrop {
       background-color: transparent;
@@ -106,6 +113,7 @@ template.innerHTML = /*html*/`
 
     dialog:open {
       opacity: 1;
+      display: flex;
     }
 
     dialog:open::backdrop {
@@ -123,6 +131,7 @@ template.innerHTML = /*html*/`
         background-color: transparent;
       }
     }
+
   </style>
   <button type="button">
       <slot name="button"></slot>

@@ -852,6 +852,7 @@ p
   max-width: 50rem;
   display: flex;
   flex-direction: column;
+  row-gap: var(--_padding-c);
   padding: var(--_padding-b);
   color: var(--_color-b);
   background-color: var(--_color-a);

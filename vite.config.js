@@ -5,6 +5,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import postcss from 'postcss';
 import cssnano from 'cssnano';
 import fs from 'fs';
+import { globSync } from 'glob';
 
 function inlineFirstNonIndexCssHtmlString(s, outDir) {
   const LINK_RE_GLOBAL = /<link\b[^>]*\brel=["']stylesheet["'][^>]*>/ig
@@ -130,11 +131,25 @@ export default defineConfig({
     assetsDir: 'assets', // Каталог для статических ресурсов
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
-        en: resolve(__dirname, "en/index.html"),
-        mealPlan: resolve(__dirname, "en/meal-plan/index.html"),
-        dietaryGuides: resolve(__dirname, "en/dietary-guides/index.html"),
-        // analytics: resolve(__dirname, "en/analytics/index.html"),
+        // main: resolve(__dirname, "index.html"),
+        // en: resolve(__dirname, "en/index.html"),
+        // mealPlan: resolve(__dirname, "en/meal-plan/index.html"),
+        // dietaryGuides: resolve(__dirname, "en/dietary-guides/index.html"),
+        // style: resolve(__dirname, "src/styles/style.css"),
+
+        ...Object.fromEntries(
+          // Glob pattern: match all index.html files in src/pages/**/  
+          globSync('src/pages/**/*.html').map((file) => [  
+            // Set the entry name (e.g., "home" for src/pages/home/index.html)  
+            file.slice(0, file.length - 10), // Remove "index.html" from the end  
+            file // The actual file path  
+          ])
+        ),
+        style: resolve(__dirname, "src/styles/style.css"),
+      },
+      output: {
+        assetFileNames: 'assets/[name][extname]',
+        chunkFileNames: 'assets/[name].js'
       },
     },
     cssCodeSplit: true,
