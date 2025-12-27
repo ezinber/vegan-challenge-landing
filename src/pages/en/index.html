@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="preload" href="/src/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" as="image" href="/src/images/hero.webp" />
+  <link rel="canonical" href="https://challenge.vgn.ge/en" />
+  <link rel="alternate" hreflang="ka" href="https://challenge.vgn.ge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="description of the webpage" />
   <meta property="og:locale" content="en" />
@@ -21,7 +23,7 @@
 
 <body>
   <ez-header data-active-class="nav-link_active" hidden>
-      <a slot="logo" href="/en/index.html" class="logo">
+      <a slot="logo" href="%VITE_BASE_URL%en%VITE_URL_END%" class="logo">
         <svg slot="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
           <use href="/src/svg/vegan-challenge-logo.svg"></use>
         </svg>
@@ -36,10 +38,10 @@
         <a href="#how" class="nav-link nav-link_with-menu hover-opacity">how</a>
         <ul>
           <li>
-            <a href="%VITE_BASE_URL%/en/meal-plan/index.html" class="nav-link hover-opacity">meal plan</a>
+            <a href="%VITE_BASE_URL%en/meal-plan%VITE_URL_END%" class="nav-link hover-opacity">meal plan</a>
           </li>
           <li>
-            <a href="%VITE_BASE_URL%/en/dietary-guides/index.html" class="nav-link hover-opacity">dietary guides</a>
+            <a href="%VITE_BASE_URL%en/dietary-guides%VITE_URL_END%" class="nav-link hover-opacity">dietary guides</a>
           </li>
         </ul>
       </li>
@@ -50,7 +52,7 @@
         <a href="#team" class="nav-link hover-opacity">team</a>
       </li>
       <li>
-        <a href="%VITE_BASE_URL%/index.html" class="nav-link hover-opacity">ქა</a>
+        <a href="%VITE_BASE_URL%%VITE_URL_END%" class="nav-link hover-opacity">ქა</a>
       </li>
   </ez-header>
 

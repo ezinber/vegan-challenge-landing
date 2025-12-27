@@ -2,8 +2,6 @@
 import path, { dirname, resolve, extname, join } from 'path'
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import postcss from 'postcss';
-import cssnano from 'cssnano';
 import fs from 'fs';
 import { globSync } from 'glob';
 
@@ -96,11 +94,11 @@ function stripIndexHtmlPlugin(outDir = 'dist') {
         let s = fs.readFileSync(file, 'utf8');
 
         // 1) Удаляем/заменяем index.html в ссылках
-        s = s.replace(indexPattern, (match, prefix = '', queryHash = '') => {
-          const preserved = queryHash || '';
-          if (!prefix) return preserved;
-          return prefix.replace(/\/$/, '') + preserved;
-        });
+        // s = s.replace(indexPattern, (match, prefix = '', queryHash = '') => {
+        //   const preserved = queryHash || '';
+        //   if (!prefix) return preserved;
+        //   return prefix.replace(/\/$/, '') + preserved;
+        // });
 
         s = inlineFirstNonIndexCssHtmlString(s, outDir);
 
@@ -125,18 +123,11 @@ function stripIndexHtmlPlugin(outDir = 'dist') {
 export default defineConfig({
   build: {
     appType: 'mpa',
-    // root: 'src',
-    outDir: 'dist', // Каталог для сборки
+    outDir: 'dist',
+    assetsDir: 'assets',
     emptyOutDir: true,
-    assetsDir: 'assets', // Каталог для статических ресурсов
     rollupOptions: {
       input: {
-        // main: resolve(__dirname, "index.html"),
-        // en: resolve(__dirname, "en/index.html"),
-        // mealPlan: resolve(__dirname, "en/meal-plan/index.html"),
-        // dietaryGuides: resolve(__dirname, "en/dietary-guides/index.html"),
-        // style: resolve(__dirname, "src/styles/style.css"),
-
         ...Object.fromEntries(
           // Glob pattern: match all index.html files in src/pages/**/  
           globSync('src/pages/**/*.html').map((file) => [  
