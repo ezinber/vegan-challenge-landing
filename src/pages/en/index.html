@@ -68,11 +68,21 @@
 
       <section id="signup" class="section section_name_signup">
         <div class="section__container">
-          <p><strong>Discover a New You!</strong> Are you ready to embark on a transformative journey that not only benefits your health but also makes a lasting impact on the planet?</p>
-          <p> Welcome to <strong>Ecolution: Vegan Challenge</strong> — Georgia's first large-scale initiative inviting you to explore the incredible advantages of a plant-based lifestyle over 30 enlightening days.</p>
-          <form action="post" class="form">
-            <button id="survey-button" class="form__submit-button hover-opacity" type="button">join the challenge!</button>
-          </form>
+          <div class="section__text" id="before-survey">
+            <p><strong>Discover a New You!</strong> Are you ready to embark on a transformative journey that not only benefits your health but also makes a lasting impact on the planet?</p>
+            <p> Welcome to <strong>Ecolution: Vegan Challenge</strong> — Georgia's first large-scale initiative inviting you to explore the incredible advantages of a plant-based lifestyle over 30 enlightening days.</p>
+            <p>To participate, fill out a simple form:</p>
+            <button id="survey-button" class="form__submit-button hover-opacity" type="button">Register</button>
+          </div>
+          <template id="after-survey">
+            <div class="section__text">
+              <img src="/src/images/welcome.webp" alt="" class="section__image">
+              <p>Join our Facebook group to participate in the challenge:</p>
+              <a href="https://www.facebook.com/share/g/1BGeiGBHgt/" class="form__submit-button hover-opacity"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <use href="/src/svg/social-icons.svg#facebook">
+              </svg>Ecolution</a>
+            </div>
+          </template>
         </div>
       </section>
 
@@ -157,7 +167,7 @@
           <details class="accordion__details" name="faq">
             <summary class="accordion__summary">How Long Will the Journey Last?</summary>
             <div class="accordion__content">
-              <p>The Ecolution Challenge begins on December 1 and runs through December 30. For those ready to dive even deeper, we offer a 42-day marathon that extends until January 11. This extended program provides you with even more insights, resources, and opportunities for personal growth. At the end of your journey, recipients of our challenge will be honored with a symbolic medal and a certificate, recognizing your commitment to positive change.</p>
+              <p>The Ecolution Challenge begins on February 1 and runs through March 2. For those ready to dive even deeper, we offer a 42-day marathon that extends until March 14. This extended program provides you with even more insights, resources, and opportunities for personal growth. At the end of your journey, recipients of our challenge will be honored with a symbolic medal and a certificate, recognizing your commitment to positive change.</p>
             </div>
           </details>
 
@@ -228,7 +238,7 @@
                 <p class="card__subtitle">IT Specialist</p>
               </article>
               <div class="popup" slot="content">
-                <p class="first-letter-accent" >***classified***</p>
+                <p class="first-letter-accent" >Mikelo works as Technical Director at Vegan Georgia, where he leads the organisation’s technical development, including maintaining web services and AI tools integration. He brings over a decade of experience in the global animal rights movement, having worked with international NGOs. Mikelo is passionate about animal liberation and environmental protection, and he puts those values into practice as a committed zero-waste lifestyle advocate.</p>
               </div>
             </ez-dialog>
           </li>

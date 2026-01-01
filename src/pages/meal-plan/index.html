@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preload" href="/src/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="canonical" href="https://challenge.vgn.ge/meal-plan" />
+  <link rel="alternate" hreflang="en" href="https://challenge.vgn.ge/en/meal-plan" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="description of the webpage" />
+  <meta property="og:locale" content="ka" />
+  <!-- <meta property="og:url" content="https://futurefood.vgn.ge" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="vegan challenge" />
+  <meta property="og:title" content="vegan challenge" />
+  <meta property="og:description" content="vegan challenge" />
+  <!-- <meta property="og:image" content="https://futurefood.ezinber.com/og.webp" /> -->
+  <title>Weekly Meal Plan</title>
+</head>
+
+<body>
+  <ez-header hidden>
+    <a slot="logo" href="%VITE_BASE_URL%%VITE_URL_END%" class="logo">
+      <svg slot="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
+        <use href="/src/svg/vegan-challenge-logo.svg"></use>
+      </svg>
+    </a>
+      <li>
+        <a href="%VITE_BASE_URL%%VITE_URL_END%#signup" class="nav-link hover-opacity">რეგისტრაცია</a>
+      </li>
+      <li>
+        <a href="%VITE_BASE_URL%%VITE_URL_END%#why" class="nav-link hover-opacity">რატომ</a>
+      </li>
+      <li>
+        <p class="nav-link nav-link_with-menu hover-opacity">როგორ</p>
+        <ul>
+          <li>
+            <a href="%VITE_BASE_URL%%VITE_URL_END%#how" class="nav-link hover-opacity">როგორ</a>
+          </li>
+          <li>
+            <a href="%VITE_BASE_URL%dietary-guides%VITE_URL_END%" class="nav-link hover-opacity">დიეტური გზამკვლევი</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="%VITE_BASE_URL%%VITE_URL_END%#faq" class="nav-link hover-opacity">შეკითხვები</a>
+      </li>
+      <li>
+        <a href="%VITE_BASE_URL%%VITE_URL_END%#team" class="nav-link hover-opacity">შესახებ</a>
+      </li>
+      <li>
+        <a href="%VITE_BASE_URL%en/meal-plan%VITE_URL_END%" class="nav-link hover-opacity">en</a>
+      </li>
+  </ez-header>
+
+  <main>
+    <section id="results" class="section section_name_faq">
+      <h1>კვირის კვების გეგმა 📝🥗</h1>
+      <div class="accordion">
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">ორშაბათი: ქართული სიყვარული <span>❤️</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">ლობიო (წითელი ლობიოს წვნიანი) და მჭადი</h3>
+                  <span class="card__subtitle">კალორიები: ~650 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ლობიო (წითელი ლობიოს წვნიანი) და მჭადი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>წითელი ლობიო (150 გ მშრალი)</dd>
+                    <dd>ხახვი</dd>
+                    <dd>ნიორი (2 კბილი)</dd>
+                    <dd>ქინძი</dd>
+                    <dd>ნიახური</dd>
+                    <dd>ქონდარი</dd>
+                    <dd>ძმარი</dd>
+                    <dd>მარილი</dd>
+                    <dd>პილპილი</dd>
+                    <dd>მჭადისთვის — სიმინდის ფქვილი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მდიდარია მცენარეული ცილით, რკინით და ბოჭკოთი</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~650 კკალ</span>
+                </div>
+              </ez-dialog>
+  
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">ისპანახის ფხალი და პომიდვრის სალათი</h3>
+                  <span class="card__subtitle">კალორიები: ~280 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ისპანახის ფხალი და პომიდვრის სალათი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები (ფხალი)</dt>
+                    <dd>ისპანახი (200 გ, ბლანშირებული)</dd>
+                    <dd>ნიგოზი (50 გ)</dd>
+                    <dd>ნიორი</dd>
+                    <dd>ქინძი</dd>
+                    <dd>უცხო სუნელი</dd>
+                    <dd>მარილი</dd>
+                    <dt>ინგრედიენტები (სალათი)</dt>
+                    <dd>პომიდორი</dd>
+                    <dd>კიტრი</dd>
+                    <dd>წითელი ხახვი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მდიდარია რკინით, ვიტამინ K‑ით, ვიტამინ C‑ით და ომეგა‑3 ცხიმებით</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~280 კკალ</span>
+                </div>
+              </ez-dialog>
+  
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">ხილის ასორტიმენტი</h3>
+                  <span class="card__subtitle">კალორიები: ~100 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ხილის ასორტიმენტი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>სეზონური ხილი (ვაშლი, ხურმა ან ყურძენი)</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მნიშვნელოვანი ინფორმაცია: ბუნებრივი შაქრები, ვიტამინ C და ანტიოქსიდანტები</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~100 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">სამშაბათი: ინდური გემოები <span>🕺</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">დალ ფრაი (ყვითელი ოსპი ქარით) ბრინჯით</h3>
+                  <span class="card__subtitle">კალორიები: ~600 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">დალ ფრაი (ყვითელი ოსპი ქარით) ბრინჯით</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ყვითელი ოსპი(100 გ მშრალი)</dd>
+                    <dd>ბრინჯი (80 გ)</dd>
+                    <dd>ხახვი</dd>
+                    <dd>ნიორი</dd>
+                    <dd>კუმინი</dd>
+                    <dd>კურკუმა</dd>
+                    <dd>ჯინჯერი</dd>
+                    <dd>პომიდორი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>კარგი წყაროა B ჯგუფის ვიტამინებისა, ფოლატის და ცილის</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~600 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">ალუ გობი (ყვავილოვანი კომბოსტო და კარტოფილი ქარით)</h3>
+                  <span class="card__subtitle">კალორიები: ~350 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ალუ გობი (ყვავილოვანი კომბოსტო და კარტოფილი ქარით)</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ყვავილოვანი კომბოსტო (200 გ)</dd>
+                    <dd>კარტოფილი (150 გ)</dd>
+                    <dd>სანელებლები (კურკუმა, გარამ მასალა, კუმინი)</dd>
+                    <dd>მცენარეული ზეთი (არ გამოიყენოთ გჰი)</dd>
+                    <dd>ქინძი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მდიდარია ბოჭკოთი, ვიტამინ C‑ით და ანთების საწინააღმდეგო თვისებებით</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~350 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">ადგილობრივი ხილის ჯემი ლავაშზე</h3>
+                  <span class="card__subtitle">კალორიები: ~120 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ადგილობრივი ხილის ჯემი ლავაშზე</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ლავაში (1 ფურცელი)</dd>
+                    <dd>ადგილობრივი ხილის ჯემი (ქლიავი/ლეღვი)</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>სწრაფი ენერგიის წყარო</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~120 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">ოთხშაბათი: ლათინურ-ამერიკული განწყობა <span>🪇</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">ვეგან ჩილი სინ კარნე</h3>
+                  <span class="card__subtitle">კალორიები: ~580 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ვეგან ჩილი სინ კარნე</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>წითელი ლობიო (150 გ)</dd>
+                    <dd>დაჭყლეტილი პომიდორი (კონსერვის ან ახალი)</dd>
+                    <dd>ხახვი</dd>
+                    <dd>წითელი და მწვანე წიწაკა</dd>
+                    <dd>სიმინდი</dd>
+                    <dd>ჩილის ფხვნილი</dd>
+                    <dd>კუმინი</dd>
+                    <dd>შებოლილი პაპრიკა</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მაღალი ცილოვანი საკვები, მდიდარი ბოჭკოთი და კალიუმით</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~580 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">ავოკადოს ტოსტი</h3>
+                  <span class="card__subtitle">კალორიები: ~250 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ავოკადოს ტოსტი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>პური (2 ნაჭერი)</dd>
+                    <dd>ავოკადო</dd>
+                    <dd>მარილი</dd>
+                    <dd>პილპილი</dd>
+                    <dd>ლაიმის წვენი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ჯანსაღი ცხიმებისა და ბოჭკოს წყარო</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~250 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">შერეული თხილეული (ნიგოზი, ნუში)</h3>
+                  <span class="card__subtitle">კალორიები: ~180 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">შერეული თხილეული (ნიგოზი, ნუში)</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>შერეული თხილეული (≈40 გ)</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ომეგა‑3 და ომეგა‑6, ვიტამინი E, ენერგიის წყარო</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~180 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">ხუთშაბათი: მარტივი ევროპული <span>💡</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">პასტა სოკოთი და პომიდვრის სოუსით</h3>
+                  <span class="card__subtitle">კალორიები: ~600 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">პასტა სოკოთი და პომიდვრის სოუსით</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>პასტა (100 გ მშრალი)</dd>
+                    <dd>ახალი სოკო (150 გ)</dd>
+                    <dd>ხახვი</dd>
+                    <dd>ნიორი</dd>
+                    <dd>პომიდორი ან პომიდვრის წვენი/პასტა</dd>
+                    <dd>ახალი ბაზილიკი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ნახშირწყლები უზრუნველყოფენ ენერგიას</dd>
+                    <dd>სოკოები უზრუნველყოფენ B ვიტამინებს</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~600 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">სახლში მომზადებული ჰუმუსი და ჯოხებად დაჭრილი ბოსტნეული</h3>
+                  <span class="card__subtitle">კალორიები: ~220 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">სახლში მომზადებული ჰუმუსი და ჯოხებად დაჭრილი ბოსტნეული</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>მუხუდო (100 გ მოხარშული)</dd>
+                    <dd>ნიორი</dd>
+                    <dd>ლიმნის წვენი</dd>
+                    <dd>მცენარეული ზეთი</dd>
+                    <dd>მარილი</dd>
+                    <dd>ჯოხებად დაჭრილი სტაფილო და კიტრი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ცილა, ბოჭკო და ვიტამინ A (სტაფილო)</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~220 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">შვრიის ვეგანური ნამცხვარი</h3>
+                  <span class="card__subtitle">კალორიები: ~150 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">შვრიის ვეგანური ნამცხვარი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>შვრია</dd>
+                    <dd>ფქვილი</dd>
+                    <dd>შაქარი</dd>
+                    <dd>მცენარეული ზეთი</dd>
+                    <dd>წყალი</dd>
+                    <dd>ქიშმიში</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>კომფორტული საკვები, ბოჭკო და მარტივი ნახშირწყლები</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~150 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">პარასკევი: აზიური ფანტაზია <span>🐉</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">შემწვარი ტოფუ და ბოსტნეულის ნუდლსთან ერთად</h3>
+                  <span class="card__subtitle">კალორიები: ~650 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">შემწვარი ტოფუ და ბოსტნეულის ნუდლსთან ერთად</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ტოფუ (150 გ)</dd>
+                    <dd>ნუდლსი (ერთჯერადი სუპის მაკარონი) კვერცხის გარეშე (80 გ)</dd>
+                    <dd>ბულგარული წიწაკა</dd>
+                    <dd>კომბოსტო</dd>
+                    <dd>სტაფილო</dd>
+                    <dd>ხახვი</dd>
+                    <dd>ნიორი</dd>
+                    <dd>ჯინჯერი</dd>
+                    <dd>სოიოს სოუსი</dd>
+                    <dd>სეზამის ზეთი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ტოფუ იძლევა სრულ ცილას, B ვიტამინები და დაბალანსებული ნახშირწყლები</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~650 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">მარტივი მისო სუპი</h3>
+                  <span class="card__subtitle">კალორიები: ~100 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">მარტივი მისო სუპი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>მისოს პასტა (შეამოწმეთ ვეგანური წარმომავლობა)</dd>
+                    <dd>წყალი</dd>
+                    <dd>მწვანე ხახვი</dd>
+                    <dd>სურვილისამებრ ტოფუს ნაჭრები</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>პრო‑ბიოტიკები ნაწლავებისთვის, მსუბუქი წასახემსებელი</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~100 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">ქოქოსის და ბრინჯის ფაფა</h3>
+                  <span class="card__subtitle">კალორიები: ~200 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ქოქოსის და ბრინჯის ფაფა</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ბრინჯი (50 გ)</dd>
+                    <dd>კოქოსის რძე</dd>
+                    <dd>ცოტა შაქარი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>კომფორტული, ჯანმრთელი ცხიმები, მარტივი მომზადებისთვის</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~200 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">შაბათი: გასართობი დასვენება <span>🏖️</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">ვეგანური პიცა</h3>
+                  <span class="card__subtitle">კალორიები: ~700 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ვეგანური პიცა</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>სახლში მომზადებული ცომი</dd>
+                    <dd>პომიდვრის სოუსი</dd>
+                    <dd>სოკო</dd>
+                    <dd>ზეთისხილი</dd>
+                    <dd>პომიდორი</dd>
+                    <dd>ხახვი</dd>
+                    <dd>წიწაკა</dd>
+                    <dd>სურვილისამებრ ვეგანური ყველი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>სახალისო საჭმელი, ბოჭკო და მრავალფეროვანი ინგრედიენტები</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~700 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">შემწვარი მუხუდო</h3>
+                  <span class="card__subtitle">კალორიები: ~180 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">შემწვარი მუხუდო</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>მუხუდო</dd>
+                    <dd>ზეთი</dd>
+                    <dd>სანელებლები (პაპრიკა, კუმინი, მარილი)</dd>
+                    <dd>შეწვით დაბრაწვამდე</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ცილა, ბოჭკო და სასიამოვნო ტექსტურა</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~180 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">სახლში გამომცხვარი ხილის დესერტი</h3>
+                  <span class="card__subtitle">კალორიები: ~250 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">სახლში გამომცხვარი ხილის დესერტი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>შვრია</dd>
+                    <dd>ფქვილი</dd>
+                    <dd>შაქარი</dd>
+                    <dd>ვეგანური მარგარინი ან ზეთი</dd>
+                    <dd>ადგილობრივი ან გაყინული ხილი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ანტიოქსიდანტები ხილიდან, ბოჭკო</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~250 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__details" name="week">
+          <summary class="accordion__summary">კვირა: ერთი კვირის შეჯამება <span>📆</span></summary>
+          <div class="accordion__content">
+            <ul class="card-list card-list_type_recipes">
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">ძირითადი კერძი</span>
+                  <h3 class="card__title">ფალაფელის ვრაპი</h3>
+                  <span class="card__subtitle">კალორიები: ~600 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">ფალაფელის ვრაპი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ფალაფელი (ნაყიდი ან სახლში დამზადებული)</dd>
+                    <dd>ლავაში ან ტორტილა</dd>
+                    <dd>ჰუმუსი</dd>
+                    <dd>სალათი (სალათის ფურცელი, პომიდორი, ხახვი)</dd>
+                    <dd>ტაჰინის სოუსი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მშვენიერი ცილის წყარო, ბოჭკო და რკინა</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~600 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">წასახემსებელი/სუპი</span>
+                  <h3 class="card__title">მწვანე სმუზი</h3>
+                  <span class="card__subtitle">კალორიები: ~150 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">მწვანე სმუზი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>ისპანახი</dd>
+                    <dd>წყალი ან მცენარეული რძე</dd>
+                    <dd>ადგილობრივი ხილი (ბანანი, ვაშლი)</dd>
+                    <dd>სელი</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>მდიდარია ვიტამინ A & C-ით, სწრაფი ნუტრიენტების მიღება</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~150 კკალ</span>
+                </div>
+              </ez-dialog>
+
+              <ez-dialog hidden>
+                <li class="card" slot="button">
+                  <span class="card__subtitle">დესერტი</span>
+                  <h3 class="card__title">გამომშრალი ხილის ასორტი</h3>
+                  <span class="card__subtitle">კალორიები: ~100 კკალ</span>
+                </li>
+                <div class="popup" slot="content">
+                  <h3 class="popup__title">გამომშრალი ხილის ასორტი</h3>
+                  <dl class="definition-list">
+                    <dt>ინგრედიენტები</dt>
+                    <dd>სეზონური ხილის ჩირი (ვაშლი, გარგარი, ქლიავი)</dd>
+                    <dt>მნიშვნელოვანი ინფორმაცია</dt>
+                    <dd>ბუნებრივი შაქარი, ვიტამინი C, ანტიოქსიდანტები</dd>
+                  </dl>
+                  <span class="popup__caption">კალორიები: ~100 კკალ</span>
+                </div>
+              </ez-dialog>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section footer">
+    <a href="https://vegangeorgia.org" target="_blank" class="footer__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 975.9 372.3">
+        <use href="/src/svg/vg-logo.svg">
+      </svg>
+    </a>
+    <ul class="footer__social-list">
+      <li>
+        <a
+          href="mailto:info@vegangeorgia.org"
+          target="_blank"
+          aria-label="send us an email"
+          class="footer__social-link hover-opacity"
+          title="email: info@vegangeorgia.org"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <use href="/src/svg/social-icons.svg#email"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/vgn.georgia/"
+          target="_blank"
+          aria-label="Visit our Instagram"
+          class="footer__social-link hover-opacity"
+          title="instagram: @vgn.georgia"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <use href="/src/svg/social-icons.svg#instagram">
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.facebook.com/vegangeorgia.org/"
+          target="_blank"
+          aria-label="Visit our Facebook"
+          class="footer__social-link hover-opacity"
+          title="facebook: @vegangeorgia.org"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <use href="/src/svg/social-icons.svg#facebook">
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <p class="footer__copyright">Ⓒ Vegan Challenge</p>
+  </footer>
+  <script async type="module" src="/src/scripts/index.js"></script>
+</body>
+
+</html>

@@ -39,10 +39,10 @@
         <a href="#how" class="nav-link nav-link_with-menu hover-opacity">როგორ</a>
         <ul>
           <li>
-            <a href="" class="nav-link hover-opacity">კვების გეგმა</a>
+            <a href="%VITE_BASE_URL%meal-plan%VITE_URL_END%" class="nav-link hover-opacity">კვების გეგმა</a>
           </li>
           <li>
-            <a href="" class="nav-link hover-opacity">დიეტური გზამკვლევი</a>
+            <a href="%VITE_BASE_URL%dietary-guides%VITE_URL_END%" class="nav-link hover-opacity">დიეტური გზამკვლევი</a>
           </li>
         </ul>
       </li>
@@ -50,7 +50,7 @@
         <a href="#faq" class="nav-link hover-opacity">შეკითხვები</a>
       </li>
       <li>
-        <a href="#about" class="nav-link hover-opacity">შესახებ</a>
+        <a href="#team" class="nav-link hover-opacity">შესახებ</a>
       </li>
       <li>
         <a href="%VITE_BASE_URL%en%VITE_URL_END%" class="nav-link hover-opacity">en</a>
@@ -60,18 +60,28 @@
   <main>
     <section class="hero">
       <h1 class="hero__title">
-        <span>უკეთესი&nbsp;საკვები.</span><span>უკეთესი&nbsp;ჯანმრთელობა.</span><span>უკეთესი&nbsp;პლანეტა.</span>
+        <span>უკეთესი&nbsp;საკვები</span><span>უკეთესი&nbsp;ჯანმრთელობა</span><span>უკეთესი&nbsp;პლანეტა</span>
       </h1>
-      <p class="hero__subtitle">მიიღე მონაწილეობა 30-დღიან გამოწვევაში.</p>
+      <p class="hero__subtitle">მიიღე მონაწილეობა 30-დღიან გამოწვევაში</p>
     </section>
 
     <section id="signup" class="section section_name_signup">
       <div class="section__container">
-        <p><strong>აღმოაჩინე ახალი “მე”!</strong> მზად ხართ დაიწყოთ ტრანსფორმაციული მოგზაურობა, რომელიც არა მხოლოდ თქვენს ჯანმრთელობას მოუტანს სარგებელს, არამედ მთელ დედამიწაზე მოახდენს დადებით გავლენას?</p>
-        <p>მაშინ გვსურს სიხარულით გაცნობოთ სიახლე — <strong>ეკოლუცია: ვეგანური გამოწვევა</strong> — საქართველოს პირველი მასშტაბური ინიციატივა, რომელიც გეპატიჟებათ 30-დღიან გასაოცარ გზაზე მცენარეული კვების უპირატესობების აღმოსაჩენად.</p>
-        <form action="post" class="form">
-          <button id="survey-button" class="form__submit-button hover-opacity" type="button">შემოუერთდი გამოწვევას!</button>
-        </form>
+        <div class="section__text" id="before-survey">
+          <p><strong>აღმოაჩინე ახალი “მე”!</strong> მზად ხართ დაიწყოთ ტრანსფორმაციული მოგზაურობა, რომელიც არა მხოლოდ თქვენს ჯანმრთელობას მოუტანს სარგებელს, არამედ მთელ დედამიწაზე მოახდენს დადებით გავლენას?</p>
+          <p>მაშინ გვსურს სიხარულით გაცნობოთ სიახლე — <strong>ეკოლუცია: ვეგანური გამოწვევა</strong> — საქართველოს პირველი მასშტაბური ინიციატივა, რომელიც გეპატიჟებათ 30-დღიან გასაოცარ გზაზე მცენარეული კვების უპირატესობების აღმოსაჩენად.</p>
+          <p>მონაწილეობის მისაღებად შეავსეთ მარტივი ფორმა:</p>
+          <button id="survey-button" class="form__submit-button hover-opacity" type="button">დარეგისტრირდი</button>
+        </div>
+        <template id="after-survey">
+          <div class="section__text">
+            <img src="/src/images/welcome.webp" alt="" class="section__image">
+            <p>გამოწვევაში მონაწილეობის მისაღებად შემოუერთდი ჩვენს ფეისბუქ ჯგუფს:</p>
+            <a href="https://www.facebook.com/share/g/1BGeiGBHgt/" class="form__submit-button hover-opacity"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <use href="/src/svg/social-icons.svg#facebook">
+            </svg>ეკოლუცია</a>
+          </div>
+        </template>
       </div>
     </section>
 
@@ -156,7 +166,7 @@
         <details class="accordion__details" name="faq">
           <summary class="accordion__summary">რამდენ ხანს გაგრძელდება გამოწვევა ?</summary>
           <div class="accordion__content">
-            <p>ეკოლუცია: ვეგანური გამოწვევა დაიწყება 1 იანვარს და გაგრძელდება 30 იანვრის ჩათვლით. მათთვის, ვისაც უფრო სიღრმისეული გამოცდილების მიღება სურს, ასევე გვაქვს 42-დღიანი მარათონი, რომელიც გაგრძელდება 11 თებერვლამდე. გახანგრძლივებული პროგრამა უზრუნველყოფს დამატებით რესურსებს და პერსონალური განვითარებისთვის ახალ შესაძლებლობებს. მოგზაურობის ბოლოს გამოწვევის მონაწილეებისთვის გაიცემა სიმბოლური მედალი და სერთიფიკატი — თქვენს მიერ განხორციელებული ცვლილებებისა და თავდადების აღსაღნიშნად.</p>
+            <p>ეკოლუცია: ვეგანური გამოწვევა დაიწყება 1 თებერვალს და გაგრძელდება 2 მარტის ჩათვლით. მათთვის, ვისაც უფრო სიღრმისეული გამოცდილების მიღება სურს, ასევე გვაქვს 42-დღიანი მარათონი, რომელიც გაგრძელდება 14 მარტის ჩათვლით. გახანგრძლივებული პროგრამა უზრუნველყოფს დამატებით რესურსებს და პერსონალური განვითარებისთვის ახალ შესაძლებლობებს. მოგზაურობის ბოლოს გამოწვევის მონაწილეებისთვის გაიცემა სიმბოლური მედალი და სერთიფიკატი — თქვენს მიერ განხორციელებული ცვლილებებისა და თავდადების აღსაღნიშნად.</p>
           </div>
         </details>
 
@@ -190,7 +200,51 @@
       </div>
     </section>
 
-      <section id="about" class="section section_name_about">
+    <section id="team" class="section section_name_team">
+      <h2>Our team</h2>
+      <ul class="card-list">
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member" slot="button">
+              <img class="card__image" src="/src/images/nini.webp" alt="">
+              <h3 class="card__title">Nini Turiashvili</h3>
+              <p class="card__subtitle">Project Manager</p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent">Nini Turiashvili serves as the president of Vegan Georgia, bringing over a decade of experience in the animal rights movement, where she has been part of organizing activities, legislative efforts, and educational initiatives. She has represented the organization at numerous international animal rights events.</p>
+              <p class="first-letter-accent">She is a master of criminal law by education, an artist by passion, and a fighter for animal liberation by destiny. A civil rights activist, she works to explore the connections between human and animal rights, advocating for oppressed groups and minorities.</p>
+              <p class="first-letter-accent">Nini's vision is to strengthen both the organization and the animal rights movement in Georgia and beyond. She is driven by the belief that no one is truly free unless we all are, dedicating her life to the highest ideal: fighting for freedom and justice for all.</p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member" slot="button">
+              <img class="card__image" src="/src/images/oleg.webp" alt="">
+              <h3 class="card__title">Oleg Ozerov</h3>
+              <p class="card__subtitle">Project Manager</p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent" >Oleg Ozerov, who holds the position of Vice President in Vegan Georgia, has been involved in animal rights scene for almost two decades. He has organised a huge number of vegan events, including conferences, summits, festivals, demonstrations, marches, campaigns, exhibitions, film screenings, and other projects. Former co-founder of Kiwi Vegan Cafe in Tbilisi, he was also actively involved in animal rights activities in Russia, Armenia, Israel, Belarus and Spain. He has also always been closely engaged in publishing animal welfare literature and has translated more than twenty themed books and a few movies. In addition to his work in Vegan Georgia, he also holds the position of General Secretary and Treasurer in Compassion Over Borders.</p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member" slot="button">
+              <img class="card__image" src="/src/images/ez.webp" alt="">
+              <h3 class="card__title">Mikelo Ezinber</h3>
+              <p class="card__subtitle">IT Specialist</p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent" >Mikelo works as Technical Director at Vegan Georgia, where he leads the organisation’s technical development, including maintaining web services and AI tools integration. He brings over a decade of experience in the global animal rights movement, having worked with international NGOs. Mikelo is passionate about animal liberation and environmental protection, and he puts those values into practice as a committed zero-waste lifestyle advocate.</p>
+            </div>
+          </ez-dialog>
+        </li>
+      </ul>
+    </section>
+
+      <!-- <section id="about" class="section section_name_about">
         <h2 class="section__title">ჩვენს შესახებ</h2>
         <div class="content-block">
           <img
@@ -263,7 +317,7 @@
             <p>ჩვენთვის ყოველი სიცოცხლე ფასეულია და თანაბარ პატივისცემას იმსახურებს, განურჩევლად მისი სახეობისა. სწორედ ამიტომ, ვქმნით სამყაროს, სადაც თანაგრძნობა და თანასწორობა იქნება ძირითადი ღირებულება სამართლიანი და ჰარმონიური მომავლის შესაქმნელად.</p>
           </div>
         </div>
-      </section>
+      </section> -->
   </main>
   <footer class="section footer">
     <a href="https://vegangeorgia.org" target="_blank" class="footer__logo">

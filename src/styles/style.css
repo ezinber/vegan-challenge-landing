@@ -122,6 +122,8 @@ p
   --_vertical-padding: 25vh;
   --_color-a: rgb(var(--color-a));
   --_color-b: rgb(var(--color-b));
+  --_shadow-color: rgba(var(--color-b, 255,255,255), .4);
+  --_shadow-offset: -.5em .5em .5em;
 
   width: 100%;
   min-height: 100dvh;
@@ -147,10 +149,27 @@ p
 }
 
 .section__text {
+  width: 100%;
   max-width: 50rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
   row-gap: 1lh;
+
+  & > p {
+    width: 100%;
+  }
+}
+
+.section__image {
+  width: 100%;
+  max-width: 25rem;
+  height: max-content;
+  aspect-ratio: 5 / 3;
+  background-color: currentColor;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: var(--_shadow-offset) var(--_shadow-color);
 }
 
 .section__list {
@@ -411,15 +430,23 @@ p
 }
 
 .form__submit-button {
-  margin-top: 1em;
-  padding: var(--_padding);
+  width: fit-content;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
   font-size: 1em;
-  border: var(--_border);
-  border-radius: var(--_padding);
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 1rem;
   color: var(--_color-a);
   background-color: var(--_color-b);
   cursor: pointer;
   text-transform: capitalize;
+  border: none;
+
+  & > svg {
+    height: 1em;
+  }
 }
 
 .card-list {
@@ -759,7 +786,7 @@ p
   aspect-ratio: 5 / 3;
   background-color: var(--_background-color);
   object-fit: cover;
-  border-radius: 1em;
+  border-radius: 1rem;
   box-shadow: var(--_shadow-offset) var(--_shadow-color);
   flex: 1 1 18rem;
   order: var(--_order, none);
