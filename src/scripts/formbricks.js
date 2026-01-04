@@ -4,6 +4,7 @@ const surveyButton = document.getElementById('survey-button');
 const signupSection = surveyButton && document.getElementById("signup");
 const beforeSurveyContent = surveyButton && document.getElementById('before-survey');
 const afterSurveyContent = surveyButton && document.getElementById('after-survey')?.content.cloneNode(true);
+const lang = document.documentElement.lang || 'en';
 
 const replaceSurveyButton = () => {
   surveyButton.removeEventListener('click', handleClick);
@@ -12,7 +13,6 @@ const replaceSurveyButton = () => {
 
 const observer = new MutationObserver((mutations, observer) => {
   for (const mutation of mutations) {
-    console.log(mutation.addedNodes)
     if (mutation.addedNodes.length > 0) {
       for (const node of mutation.addedNodes) {
         if (node.childNodes.length > 0) {
@@ -51,7 +51,7 @@ const handleClick = () => {
   });
 }
 
-export const defineSurveyButton = () => {
+export const defineSurveyButton = async () => {
   if (!surveyButton) return;
 
   if (sessionStorage.getItem('status') === 'finished') {
@@ -63,9 +63,11 @@ export const defineSurveyButton = () => {
   if (typeof window !== "undefined") {
     surveyButton.addEventListener('click', handleClick);
 
-    formbricks.setup({
-      environmentId: "cmepjgfanupuluh01l6vcxlhy",
+    await formbricks.setup({
+      environmentId: "cmepjgfbaupuquh01i76nj8zr",
       appUrl: "https://app.formbricks.com",
-    });
+    })
+
+    formbricks.setLanguage(lang);
   }
 }
