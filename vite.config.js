@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import fs from 'fs';
 import { globSync } from 'glob';
+import Sitemap from 'vite-plugin-sitemap'
+
+const getDate = () => new Date().toISOString().split('T')[0];
 
 function inlineFirstNonIndexCssHtmlString(s, outDir) {
   const LINK_RE_GLOBAL = /<link\b[^>]*\brel=["']stylesheet["'][^>]*>/ig
@@ -138,10 +141,10 @@ export default defineConfig({
         ),
         style: resolve(__dirname, "src/styles/style.css"),
       },
-      output: {
-        assetFileNames: 'assets/[name][extname]',
-        chunkFileNames: 'assets/[name].js'
-      },
+      // output: {
+      //   assetFileNames: 'assets/[name][extname]',
+      //   chunkFileNames: 'assets/[name].js'
+      // },
     },
     cssCodeSplit: true,
   },
@@ -159,5 +162,8 @@ export default defineConfig({
       },
     }),
     stripIndexHtmlPlugin('dist'),
+    Sitemap({ 
+      hostname: 'https://challenge.vgn.ge',
+    }),
   ],
 });

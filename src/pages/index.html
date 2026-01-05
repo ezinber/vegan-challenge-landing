@@ -25,7 +25,7 @@
   <ez-header data-active-class="nav-link_active" hidden>
     <a slot="logo" href="%VITE_BASE_URL%
     %VITE_URL_END%" class="logo">
-      <svg slot="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0.8 24 24">
         <use href="/src/svg/vegan-challenge-logo.svg#vegan-challenge-logo"></use>
       </svg>
     </a>
@@ -50,7 +50,7 @@
         <a href="#faq" class="nav-link hover-opacity">შეკითხვები</a>
       </li>
       <li>
-        <a href="#team" class="nav-link hover-opacity">შესახებ</a>
+        <a href="#team" class="nav-link hover-opacity">გუნდი</a>
       </li>
       <li>
         <a href="%VITE_BASE_URL%en%VITE_URL_END%" class="nav-link hover-opacity">en</a>
@@ -201,43 +201,114 @@
     </section>
 
     <section id="team" class="section section_name_team">
-      <h2>Our team</h2>
+      <h2>გუნდი</h2>
       <ul class="card-list">
         <li>
           <ez-dialog hidden>
-            <article class="card card_type_member" slot="button">
-              <img class="card__image" src="/src/images/nini.webp" alt="">
-              <h3 class="card__title">Nini Turiashvili</h3>
-              <p class="card__subtitle">Project Manager</p>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/nini.webp" alt="" loading="lazy">
+              <h3 class="card__title">ნინი ტურიაშვილი</h3>
+              <p class="card__subtitle">პროექტის მენეჯერი</p>
+              <p class="card__description">ნინი “ვეგან ჯორჯიას” ემსახურება როგორც პრეზიდენტი. მას აქვს ათწლეულის გამოცდილება ცხოველთა უფლებებისთვის ბრძოლაში - აქტივობების ორგანიზების, საკანონმდებლო სამუშაოს და საგანმანათლებლო ინიციატივების განხორციელებაში.<span class="card__more-bar">...მეტი</span></p>
             </article>
             <div class="popup" slot="content">
-              <p class="first-letter-accent">Nini Turiashvili serves as the president of Vegan Georgia, bringing over a decade of experience in the animal rights movement, where she has been part of organizing activities, legislative efforts, and educational initiatives. She has represented the organization at numerous international animal rights events.</p>
-              <p class="first-letter-accent">She is a master of criminal law by education, an artist by passion, and a fighter for animal liberation by destiny. A civil rights activist, she works to explore the connections between human and animal rights, advocating for oppressed groups and minorities.</p>
-              <p class="first-letter-accent">Nini's vision is to strengthen both the organization and the animal rights movement in Georgia and beyond. She is driven by the belief that no one is truly free unless we all are, dedicating her life to the highest ideal: fighting for freedom and justice for all.</p>
+              <p class="first-letter-accent">ნინი “ვეგან ჯორჯიას” ემსახურება როგორც პრეზიდენტი. მას აქვს ათწლეულის გამოცდილება ცხოველთა უფლებებისთვის ბრძოლაში - აქტივობების ორგანიზების, საკანონმდებლო სამუშაოს და საგანმანათლებლო ინიციატივების განხორციელებაში. ნინი წარმოადგენდა ორგანიზაციას მრავალ საერთაშორისო ღონისძიებაზე.</p>
+              <p class="first-letter-accent">განათლებით სისხლის სამართლის მაგისტრი, ხელოვანი გატაცებით და ცხოველთა განთავისუფლებისთვის მებრძოლი დანიშნულებით. ნინი ჩართულია სამოქალაქო უფლებების აქტივიზმში; მუშაობს ადამიანისა და ცხოველთა უფლებების კავშირის შესწავლაზე და უჭერს მხარს ჩაგრულ ჯგუფებსა და უმცირესობებს.</p>
+              <p class="first-letter-accent">ნინის ხედვაა გააძლიეროს ორგანიზაცია და ცხოველთა უფლებების მოძრაობა როგორც საქართველოში, ისე მის ფარგლებს გარეთ. მას ამოძრავებს რწმენა, რომ ნამდვილი თავისუფლება არ არსებობს მანამ, სანამ ყველანი არ ვიქნებით თავისუფალნი და სურს ცხოვრება მიუძღვნას უმაღლეს იდეალს: ბრძოლას საყოველთაო თავისუფლებისა და სამართლიანობისათვის.</p>
             </div>
           </ez-dialog>
         </li>
         <li>
           <ez-dialog hidden>
-            <article class="card card_type_member" slot="button">
-              <img class="card__image" src="/src/images/oleg.webp" alt="">
-              <h3 class="card__title">Oleg Ozerov</h3>
-              <p class="card__subtitle">Project Manager</p>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/oleg.webp" alt="" loading="lazy">
+              <h3 class="card__title">ოლეგ ოზეროვ</h3>
+              <p class="card__subtitle">პროექტის მენეჯერი</p>
+              <p class="card__description">ოლეგ ოზეროვი, “ვეგან ჯორჯიას” ვიცე-პრეზიდენტი თითქმის ორი ათეული წელია მონაწილეობს ცხოველთა უფლებების სფეროში.<span class="card__more-bar">...მეტი</span></p>
             </article>
             <div class="popup" slot="content">
-              <p class="first-letter-accent" >Oleg Ozerov, who holds the position of Vice President in Vegan Georgia, has been involved in animal rights scene for almost two decades. He has organised a huge number of vegan events, including conferences, summits, festivals, demonstrations, marches, campaigns, exhibitions, film screenings, and other projects. Former co-founder of Kiwi Vegan Cafe in Tbilisi, he was also actively involved in animal rights activities in Russia, Armenia, Israel, Belarus and Spain. He has also always been closely engaged in publishing animal welfare literature and has translated more than twenty themed books and a few movies. In addition to his work in Vegan Georgia, he also holds the position of General Secretary and Treasurer in Compassion Over Borders.</p>
+              <p class="first-letter-accent" >ოლეგ ოზეროვი, “ვეგან ჯორჯიას” ვიცე-პრეზიდენტი თითქმის ორი ათეული წელია მონაწილეობს ცხოველთა უფლებების სფეროში. მან დააორგანიზა მრავალი ვეგანური ღონისძიება — კონფერენციები, სამიტები, ფესტივალები, დემონსტრაციები, მსვლელობები, კამპანიები, გამოფენები, ფილმის ჩვენებები და სხვა პროექტები. თბილისის Kiwi Vegan Cafe-ს ყოფილი თანადამფუძნებელი, აქტიურად იყო ჩართული ცხოველთა უფლებების აქტივობებში რუსეთში, სომხეთში, ისრაელში, ბელარუსსა და ესპანეთში. ის ყოველთვის ჩართული იყო ცხოველთა კეთილდღეობის თემაზე ლიტერატურის გამოცემასა და თარგმნა ოცზე მეტი თემატური წიგნი და რამდენიმე ფილმი. Vegan Georgia-ში მუშაობის გარდა, ოლეგს ასევე აქვს თანაშემწის (General Secretary) და ფინანსური მენეჯერის (Treasurer) პოზიციები Compassion Over Borders-ში.</p>
             </div>
           </ez-dialog>
         </li>
         <li>
           <ez-dialog hidden>
-            <article class="card card_type_member" slot="button">
-              <img class="card__image" src="/src/images/ez.webp" alt="">
-              <h3 class="card__title">Mikelo Ezinber</h3>
-              <p class="card__subtitle">IT Specialist</p>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/ez.webp" alt="" loading="lazy">
+              <h3 class="card__title">მიკელო ეზინბერ</h3>
+              <p class="card__subtitle">IT სპეციალისტი</p>
+              <p class="card__description">მიკელო მუშაობს “ვეგან ჯორჯიას” ტექნიკურ დირექტორად, სადაც ხელმძღვანელობს ორგანიზაციის ტექნიკურ განვითარებას, მათ შორის ვებ-სერვისების მხარდაჭერასა და ხელოვნური ინტელექტის ტექნოლოგიების ინტეგრაციას.<span class="card__more-bar">...მეტი</span></p>
             </article>
             <div class="popup" slot="content">
-              <p class="first-letter-accent" >Mikelo works as Technical Director at Vegan Georgia, where he leads the organisation’s technical development, including maintaining web services and AI tools integration. He brings over a decade of experience in the global animal rights movement, having worked with international NGOs. Mikelo is passionate about animal liberation and environmental protection, and he puts those values into practice as a committed zero-waste lifestyle advocate.</p>
+              <p class="first-letter-accent">მიკელო მუშაობს “ვეგან ჯორჯიას” ტექნიკურ დირექტორად, სადაც ხელმძღვანელობს ორგანიზაციის ტექნიკურ განვითარებას, მათ შორის ვებ-სერვისების მხარდაჭერასა და ხელოვნური ინტელექტის ტექნოლოგიების ინტეგრაციას. მას აქვს ათწლეულზე მეტი გამოცდილება საერთაშორისო ცხოველთა უფლებათა მოძრაობაში, სადაც თანამშრომლობდა სხვადასხვა საერთაშორისო არასამთავრობო ორგანიზაციებთან. მიკელო უმაღლესი მოტივაციაა ცხოველთა გათავისუფლებისა და გარემოს დაცვის იდეალებისთვის ბრძოლა. ის  საკუთარ ღირებულებებს ახორციელებს როგორც ნულოვანი ნარჩენების ცხოვრების სტილის მიმდევარი.</p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/vakho.webp" alt="" loading="lazy">
+              <h3 class="card__title">ვახტანგ უშვერიძე</h3>
+              <p class="card__subtitle">მენტორი</p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent"></p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/mary-b.webp" alt="" loading="lazy">
+              <h3 class="card__title">მარიამ ბეროშვილი</h3>
+              <p class="card__subtitle">მთავარი მენტორი</p>
+              <p class="card__description">მარიამს ვეგანური ცხოვრების წესი ადამიანური ცნობიერების განვითარების მნიშვნელოვან ინსტრუმენტად მიაჩნია. მიაჩნია, რომ თანაგრძნობა ადამიანისთვის ბუნებრივი თვისებაა, და ვეგანური ცხოვრების წესი ხელს უწყობს ადამიანის ბუნების საუკეთესო მხარეების გამოვლენას.<span class="card__more-bar">...მეტი</span></p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent">მარიამს ვეგანური ცხოვრების წესი ადამიანური ცნობიერების განვითარების მნიშვნელოვან ინსტრუმენტად მიაჩნია. მიაჩნია, რომ თანაგრძნობა ადამიანისთვის ბუნებრივი თვისებაა, და ვეგანური ცხოვრების წესი ხელს უწყობს ადამიანის ბუნების საუკეთესო მხარეების გამოვლენას.</p>
+              <p class="first-letter-accent">ძალადობა მგრძნობიარე არსებების მიმართ ანგრევს პასუხისმგებლობასა და სოლიდარობას ადამიანებს შორის, ხოლო ბუნებასთან სიახლოვე და ყველა ცოცხალი არსების თანასწორად აღქმა აფართოვებს ჩვენს ხედვას სამყაროსადმი.</p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/sandro.webp" alt="" loading="lazy">
+              <h3 class="card__title">სანდრო გიგინეიშვილი</h3>
+              <p class="card__subtitle">მენტორი</p>
+              <p class="card__description">სანდრო ვეგანი 27 წლის ასაკში გახდა და ამ გზას 4 წელია აგრძელებს, ასე რომ - გვიანი არასოდესაა პოზიტიური ცვლილებისთვის.<span class="card__more-bar">...მეტი</span></p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent">სანდრო ვეგანი 27 წლის ასაკში გახდა და ამ გზას 4 წელია აგრძელებს, ასე რომ - გვიანი არასოდესაა პოზიტიური ცვლილებისთვის. მას დიდი გამოცდილება აქვს ცხოველთა უფლებების დაცვის აქტივიზმში, საზოგადოებასთან ურთიერთობასა და ვეგანობის იდეის გავრცელებაში.</p>
+              <p class="first-letter-accent">მას ძალიან უყვარს ველოსიპედი, სირბილი, მუსიკალური ინსტრუმენტები და კომპიუტერული თამაშები. სანდრო მზარეულად მუშაობს ვეგანურ კაფე "კივი"-ში.</p>
+              <p class="first-letter-accent">მისი საყვარელი “ზარმაცი” საჭმელია მჭადი ტოფუს შიგთავსით.სანდროს სახლში ჰყავს ყველასთვის საყვარელი ფუმფულა ბაჭია.</p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/ez.webp" alt="" loading="lazy">
+              <h3 class="card__title">მადონა ცეცხლაძე</h3>
+              <p class="card__subtitle">მენტორი</p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent"></p>
+            </div>
+          </ez-dialog>
+        </li>
+        <li>
+          <ez-dialog hidden>
+            <article class="card card_type_member card_color_reverse" slot="button">
+              <img class="card__image" src="/src/images/mariam-c.webp" alt="" loading="lazy">
+              <h3 class="card__title">მარიამ ჭავჭავაძე</h3>
+              <p class="card__subtitle">მენტორი</p>
+              <p class="card__description">მე ვარ მარიამი, 5 წლის წინ გავხდი ვეგეტარიანელი და მალევე ვეგანი. ვეგანობამ ჩემი ცხოვრება სრულიად უკეთესობისკენ შეცვალა.<span class="card__more-bar">...მეტი</span></p>
+            </article>
+            <div class="popup" slot="content">
+              <p class="first-letter-accent">მე ვარ მარიამი, 5 წლის წინ გავხდი ვეგეტარიანელი და მალევე ვეგანი. ვეგანობამ ჩემი ცხოვრება სრულიად უკეთესობისკენ შეცვალა. გარდა იმისა რომ გავიცანი შესანიშნავი ადამიანები, სხვანაირად დავინახე ცხოვრებისეული საკითხები, ცხოველებთან და ბუნებასთან ურთიერთობა უფრო აზრიანი და საინტერესო გახდა.</p>
+              <p class="first-letter-accent">მყავს 13 ძაღლი და კატა, ვიმედოვნებ მეყოლება ქათმებიც და სხვა ცხოველებიც. მანტერესებს ფსიქოლოგია და პიროვნული განვითარება, მიყვარს ჭადრაკი, ფილმები და ცხოველებთან ურთიერთობა. ვეგანობა ერთ-ერთი საუკეთესო ტრანსფორმაციაა ცხოვრებაში, ამიტომ სიამოვნებით დავეხმარები ადამიანებს ვინც ფიქრობს ვეგანობაზე.</p>
+              <p class="first-letter-accent">ამ გზაზე უამრავი გამოწვევა გვხვდება, თუმცა როცა საკუთარ გადაწყვეტილებაში დარწმუნებული ხარ, ყველაფერი შეიძლება გამარტივდეს. ძალაინ გამიმართლა, რომ გავხდი ვეგანი.</p>
             </div>
           </ez-dialog>
         </li>

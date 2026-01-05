@@ -4,8 +4,8 @@ template.innerHTML = /*html*/`
   <style>
     :host {
       --_transition: var(--transition-a, .2s linear);
-      --_color-a: var(--color-a, #fff);
-      --_background-color: rgb(var(--color-b, #000));
+      --_color-a: rgb(var(--color-a, #fff));
+      --_color-b: rgb(var(--color-b, #000));
       --_font-size: var(--font-size-a, 1rem);
       --_burger-line-width: 3px;
 
@@ -16,7 +16,8 @@ template.innerHTML = /*html*/`
       align-items: center;
       position: fixed;
       top: 0;
-      background-color: var(--_background-color);
+      color: var(--_color-a);
+      background-color: var(--_color-b);
       border-radius: 1em;
       box-shadow: 2px 2px 4px black;
       z-index: 3;
@@ -26,20 +27,20 @@ template.innerHTML = /*html*/`
         height var(--_transition),
         width var(--_transition);
 
-      &:has(a[slot="logo"]) {
+      &:has([slot="logo"]) {
         padding-left: 2.5rem;
         margin-left: 2.5rem;
         border-top-left-radius: 0;
       }
     }
 
-    ::slotted(a[slot="logo"]) {
+    ::slotted([slot="logo"]) {
       width: 5rem;
       height: 5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgb(var(--_color-a));
+      background-color: var(--_color-a);
       border-radius: 50%;
       padding: .4rem;
       position: absolute;
@@ -134,7 +135,7 @@ template.innerHTML = /*html*/`
         right: 0;
         bottom: 0;
 
-        &:has(a[slot="logo"]) {
+        &:has([slot="logo"]) {
           border-radius: 1rem;
         }
       }
@@ -153,7 +154,7 @@ template.innerHTML = /*html*/`
         height: fit-content;
         padding: 1em 1em 3em;
 
-        &:has(a[slot="logo"]) {
+        &:has([slot="logo"]) {
           padding: 3.5rem .5em .5em;
         }
       }
