@@ -75,7 +75,7 @@ ul {
   --_vertical-padding: 25vh;
   --_color-a: rgb(var(--color-a));
   --_color-b: rgb(var(--color-b));
-  --_linear-gradient: linear-gradient(rgba(var(--color-b), var(--opacity-c)));
+  --_color-b-1: rgba(var(--color-b), var(--opacity-c));
   --_padding-a: var(--padding-a, 1rem);
   --_padding-b: var(--padding-b, 1rem);
   --_width-a: var(--width-a, 100%);
@@ -83,19 +83,27 @@ ul {
   width: 100%;
   min-height: 100dvh;
   padding: var(--_vertical-padding) var(--_padding-a);
+  position: relative;
+  display: grid;
   align-items: center;
   row-gap: 3em;
   padding-bottom: 0;
-  display: grid;
   justify-items: center;
   grid-template-rows: 1fr max-content;
-  background-image:
-    var(--_linear-gradient),
-    url(../images/hero.webp);
+  background-image: url(../images/hero.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--_color-b-1);
+    z-index: -1;
+  }
 }
 
 .hero__title {
@@ -184,7 +192,7 @@ ul {
 
 .nav-link {
   --_transition: var(--transition-a, .2s linear);
-  --_background-color: rgb(var(--_color-b, #000));
+  --_color-b: rgb(var(--_color-b, #000));
 
   width: 100%;
   padding: .5em;
@@ -243,7 +251,7 @@ ul {
   position: absolute;
   inset: 1.5lh auto auto 50%;
   transform: translateX(-50%);
-  background-color: var(--_background-color);
+  background-color: var(--_color-b);
   list-style: none;
   visibility: hidden;
   opacity: 0;

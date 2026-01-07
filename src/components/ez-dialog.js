@@ -11,7 +11,7 @@ template.innerHTML = /*html*/`
       --_close-button-color: rgb(var(--color-a, 255, 255, 255));
       --_backdrop-color: rgba(var(--color-b, 0 0 0), var(--opacity-a, .8));
 
-      display: contents;
+      display: block;
       width: fit-content;
       height: 100%;
       font-size: inherit;
@@ -44,6 +44,7 @@ template.innerHTML = /*html*/`
     }
 
     button[type="button"] {
+      height: 100%;
       transform: translateY(0);
       transition: transform var(--_transition);
 

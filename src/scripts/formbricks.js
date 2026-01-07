@@ -6,6 +6,21 @@ const beforeSurveyContent = surveyButton && document.getElementById('before-surv
 const afterSurveyContent = surveyButton && document.getElementById('after-survey')?.content.cloneNode(true);
 const lang = document.documentElement.lang || 'en';
 
+const makeHandler = (selector) => {
+  return (e) => {
+    const modal = document.querySelector(selector);
+
+    if (!modal) return;
+
+    if (!modal.contains(e.target)) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+  };
+}
+
+const handleClosingByClickPrevention = makeHandler('.bg-survey-bg');
+
 const replaceSurveyButton = () => {
   surveyButton.removeEventListener('click', handleClick);
   beforeSurveyContent.replaceWith(afterSurveyContent);
@@ -33,6 +48,7 @@ const observer = new MutationObserver((mutations, observer) => {
       for (const node of mutation.removedNodes) {
         if (node.matches('[id="formbricks-modal-container"]')) {
           observer.disconnect();
+          document.removeEventListener('mousedown', handleClosingByClickPrevention, { capture: true });
 
           return;
         }
@@ -41,14 +57,16 @@ const observer = new MutationObserver((mutations, observer) => {
   }
 });
 
-const handleClick = () => {
-  formbricks.track("survey-button-click");
+const handleClick = async () => {
+  await formbricks.track("survey-button-click");
 
   observer.observe(document.body, {
     childList: true,
     subtree: true,
     attributes: false,
   });
+
+  document.addEventListener('mousedown', handleClosingByClickPrevention, { capture: true, passive: false });
 }
 
 export const defineSurveyButton = async () => {
