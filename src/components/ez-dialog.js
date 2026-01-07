@@ -12,7 +12,7 @@ template.innerHTML = /*html*/`
       --_backdrop-color: rgba(var(--color-b, 0 0 0), var(--opacity-a, .8));
 
       display: block;
-      width: fit-content;
+      width: 100%;
       height: 100%;
       font-size: inherit;
     }
@@ -44,6 +44,7 @@ template.innerHTML = /*html*/`
     }
 
     button[type="button"] {
+      width: 100%;
       height: 100%;
       transform: translateY(0);
       transition: transform var(--_transition);
@@ -112,12 +113,12 @@ template.innerHTML = /*html*/`
         backdrop-filter var(--_transition);
     }
 
-    dialog:open {
+    dialog[open] {
       opacity: 1;
       display: flex;
     }
 
-    dialog:open::backdrop {
+    dialog[open]::backdrop {
       background-color: var(--_backdrop-color);
       backdrop-filter: var(--_backdrop-filter);
     }

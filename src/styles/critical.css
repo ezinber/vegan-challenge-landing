@@ -82,7 +82,7 @@ ul {
 
   width: 100%;
   min-height: 100dvh;
-  padding: var(--_vertical-padding) var(--_padding-a);
+  padding: var(--_vertical-padding) var(--_padding-b);
   position: relative;
   display: grid;
   align-items: center;

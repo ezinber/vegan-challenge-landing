@@ -35,11 +35,9 @@ template.innerHTML = /*html*/`
     }
 
     ::slotted([slot="logo"]) {
-      width: 5rem;
       height: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 5rem;
+      display: block;
       background-color: var(--_color-a);
       border-radius: 50%;
       padding: .4rem;

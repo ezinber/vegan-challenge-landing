@@ -30,6 +30,12 @@ const observer = new MutationObserver((mutations, observer) => {
   for (const mutation of mutations) {
     if (mutation.addedNodes.length > 0) {
       for (const node of mutation.addedNodes) {
+        if (node.matches('[id="formbricks-modal-container"]')) {
+          document.addEventListener('mousedown', handleClosingByClickPrevention, { capture: true, passive: false });
+
+          return;
+        }
+
         if (node.childNodes.length > 0) {
           for (const child of node.childNodes) {
             if (child.htmlFor === 'EndingCard') {
@@ -57,16 +63,14 @@ const observer = new MutationObserver((mutations, observer) => {
   }
 });
 
-const handleClick = async () => {
-  await formbricks.track("survey-button-click");
+const handleClick = () => {
+  formbricks.track("survey-button-click");
 
   observer.observe(document.body, {
     childList: true,
     subtree: true,
     attributes: false,
   });
-
-  document.addEventListener('mousedown', handleClosingByClickPrevention, { capture: true, passive: false });
 }
 
 export const defineSurveyButton = async () => {
